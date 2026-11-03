@@ -1,10 +1,10 @@
-# LVK Rabbit 🐰
+# LVK Rabbit
 
-LVK Rabbitは、Codex・Petdex・[Lucky Vibe Kanban (LVK)](https://luckyvibekanban.com) で使える、アニメーション付きのオリジナルのピクセルアートPetです。
+LVK Rabbitは、Codex・Petdex で使える、アニメーション付きのオリジナルのピクセルアートPetです。
 
 クリーム色の垂れ耳、丸眼鏡、ミントグリーンのパーカー、四つ葉クローバー付きノートPCが特徴の、ちょっと早とちりで一生懸命なコーディングウサギです。ChatGPTでデザインを決め、CodexとOpenAIのHatch Pet Skillを用いてアニメーションを制作しました。
 
-![LVK Rabbit](previews/idle.gif)
+![LVK Rabbit](previews/idle.webp)
 
 ## アニメーション
 
@@ -12,19 +12,17 @@ LVK Rabbitは、Codex・Petdex・[Lucky Vibe Kanban (LVK)](https://luckyvibekanb
 
 | Idle | Working | Waiting |
 |---|---|---|
-| ![Idle](previews/idle.gif) | ![Working](previews/running.gif) | ![Waiting](previews/waiting.gif) |
+| ![Idle](previews/idle.webp) | ![Working](previews/running.webp) | ![Waiting](previews/waiting.webp) |
 
 | Failed | Review | Jumping |
 |---|---|---|
-| ![Failed](previews/failed.gif) | ![Review](previews/review.gif) | ![Jumping](previews/jumping.gif) |
+| ![Failed](previews/failed.webp) | ![Review](previews/review.webp) | ![Jumping](previews/jumping.webp) |
 
 ## インストール・形式
 
 `pet.json` と `spritesheet.webp` の2ファイルを `~/.codex/pets/lvk-rabbit/` に配置します。アプリ側でカスタムPetを選択する操作はCodexクライアントによって異なります。
 
 アトラスはPetdex/Codex Pet v1互換の1536×1872px、8列×9行、1セル192×208px。使用57フレーム、未使用15セルは透明です。
-
-Petdexへの投稿は`npx petdex login`後に`npx petdex submit ./`で可能です（審査あり）。
 
 ## ライセンス
 
