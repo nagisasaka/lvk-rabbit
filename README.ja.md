@@ -32,5 +32,3 @@ LVK Rabbitは、Codex・Petdex で使える、アニメーション付きのオ�
 
 **クレジット表記例：** *LVK Rabbit* — Masato Fujino, [原本](https://github.com/nagisasaka/lvk-rabbit), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。改変した場合はその旨も明示してください。クレジットは著作者による推薦や承認を意味しません。
 
-OpenAI ChatGPTとCodex / Hatch Petの支援を受けて制作した独立のコミュニティ作品であり、OpenAIの公式キャラクターではありません。生成AIによる素材の著作権成立範囲は法域によって異なるため、本ライセンスによる許諾は公開者が保有する権利の範囲に限られます。
-
