@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "file": "/workspace/lvk_rabbit_codex_trial/output/lvk-rabbit-v1-polish/final/spritesheet.webp",
+  "file": "/workspace/lvk_rabbit_codex_trial/output/lvk-rabbit-v1-variant-failed-desk-v5/final/spritesheet.webp",
   "format": "WEBP",
   "mode": "RGBA",
   "width": 1536,
@@ -294,56 +294,56 @@
       "row": 5,
       "column": 0,
       "used": true,
-      "nontransparent_pixels": 23130
+      "nontransparent_pixels": 12990
     },
     {
       "state": "failed",
       "row": 5,
       "column": 1,
       "used": true,
-      "nontransparent_pixels": 22414
+      "nontransparent_pixels": 13230
     },
     {
       "state": "failed",
       "row": 5,
       "column": 2,
       "used": true,
-      "nontransparent_pixels": 21564
+      "nontransparent_pixels": 13210
     },
     {
       "state": "failed",
       "row": 5,
       "column": 3,
       "used": true,
-      "nontransparent_pixels": 21160
+      "nontransparent_pixels": 12996
     },
     {
       "state": "failed",
       "row": 5,
       "column": 4,
       "used": true,
-      "nontransparent_pixels": 20685
+      "nontransparent_pixels": 12984
     },
     {
       "state": "failed",
       "row": 5,
       "column": 5,
       "used": true,
-      "nontransparent_pixels": 21997
+      "nontransparent_pixels": 13395
     },
     {
       "state": "failed",
       "row": 5,
       "column": 6,
       "used": true,
-      "nontransparent_pixels": 22833
+      "nontransparent_pixels": 13186
     },
     {
       "state": "failed",
       "row": 5,
       "column": 7,
       "used": true,
-      "nontransparent_pixels": 23224
+      "nontransparent_pixels": 12961
     },
     {
       "state": "waiting",

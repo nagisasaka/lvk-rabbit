@@ -36,7 +36,7 @@ This package uses the Codex / Petdex v1 sprite atlas: 1536 × 1872 pixels, 8 col
 
 **Creative Commons Attribution 4.0 International (CC BY 4.0)** — see the [LICENSE](LICENSE) file and the [official license](https://creativecommons.org/licenses/by/4.0/).
 
-The pet artwork (`spritesheet.webp`), animated previews (`previews/*.gif`), contact sheet, metadata, and documentation are published under CC BY 4.0 to the extent the publisher holds applicable rights. Reuse, modification, redistribution, and commercial use are permitted under its conditions, including appropriate attribution, a license link, and an indication of modifications.
+The pet artwork (`spritesheet.webp`), animated previews (`previews/*.webp`), contact sheet, metadata, and documentation are published under CC BY 4.0 to the extent the publisher holds applicable rights. Reuse, modification, redistribution, and commercial use are permitted under its conditions, including appropriate attribution, a license link, and an indication of modifications.
 
 **Attribution:** *LVK Rabbit* — Masato Fujino, [source repository](https://github.com/nagisasaka/lvk-rabbit), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Indicate if you modify the material. Attribution does not imply endorsement.
 

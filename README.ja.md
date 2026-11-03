@@ -28,7 +28,7 @@ LVK Rabbitは、Codex・Petdex で使える、アニメーション付きのオ�
 
 **クリエイティブ・コモンズ 表示 4.0 国際（CC BY 4.0）**。ライセンス全文は [`LICENSE`](LICENSE)、条件の案内は[公式ページ](https://creativecommons.org/licenses/by/4.0/deed.ja)を参照してください。
 
-画像（`spritesheet.webp`）、アニメーションGIF、コンタクトシート、メタデータ、ドキュメントは、公開者が許諾できる権利の範囲でCC BY 4.0として提供します。適切な著作者表示、ライセンスへのリンク、変更した場合の明示などの条件を守れば、改変・再配布・商用利用が可能です。
+画像（`spritesheet.webp`）、アニメーションWebP、コンタクトシート、メタデータ、ドキュメントは、公開者が許諾できる権利の範囲でCC BY 4.0として提供します。適切な著作者表示、ライセンスへのリンク、変更した場合の明示などの条件を守れば、改変・再配布・商用利用が可能です。
 
 **クレジット表記例：** *LVK Rabbit* — Masato Fujino, [原本](https://github.com/nagisasaka/lvk-rabbit), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。改変した場合はその旨も明示してください。クレジットは著作者による推薦や承認を意味しません。
 
