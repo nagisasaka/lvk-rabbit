@@ -1,0 +1,19 @@
+<!doctype html><html lang="ja"><meta charset="utf-8"><title>LVK Rabbit v2.2</title>
+<style>body{font-family:system-ui;background:#18212a;color:#eee;margin:24px}body.light{background:#f6f4ef;color:#222}button,select{padding:8px;margin:4px}section{display:flex;flex-wrap:wrap;gap:16px}article{border:1px solid #8886;border-radius:12px;text-align:center;padding:12px}h2{font-size:16px}canvas{width:192px;height:208px}#lookzone{display:inline-flex;align-items:center;justify-content:center;width:440px;height:360px;max-width:90vw;border:1px dashed #888;border-radius:16px}p{max-width:780px;line-height:1.6}</style>
+<h1>LVK Rabbit v2.2</h1><p>既存9状態と16方向の視線。枠内でポインターを動かすと、その方向を向きます。中央ではIdleに戻ります。このページは確認用のプレビューです。</p>
+<button id="theme">ライト／ダーク</button><label>表示サイズ<select id="size"><option>192</option><option>96</option><option>288</option></select></label>
+<p id="direction">Idle / neutral</p><div id="lookzone"><canvas id="look" width="192" height="208"></canvas></div>
+<button id="sweep">16方向を順に再生</button><section><article><h2>idle</h2><canvas data-state="0" width="192" height="208"></canvas></article><article><h2>running-right</h2><canvas data-state="1" width="192" height="208"></canvas></article><article><h2>running-left</h2><canvas data-state="2" width="192" height="208"></canvas></article><article><h2>waving</h2><canvas data-state="3" width="192" height="208"></canvas></article><article><h2>jumping</h2><canvas data-state="4" width="192" height="208"></canvas></article><article><h2>failed</h2><canvas data-state="5" width="192" height="208"></canvas></article><article><h2>waiting</h2><canvas data-state="6" width="192" height="208"></canvas></article><article><h2>running</h2><canvas data-state="7" width="192" height="208"></canvas></article><article><h2>review</h2><canvas data-state="8" width="192" height="208"></canvas></article></section>
+<script>
+const durations=[[280, 110, 110, 140, 140, 320], [120, 120, 120, 120, 120, 120, 120, 220], [120, 120, 120, 120, 120, 120, 120, 220], [140, 140, 140, 280], [140, 140, 140, 140, 280], [140, 140, 140, 140, 140, 140, 140, 240], [150, 150, 150, 150, 150, 260], [120, 120, 120, 120, 120, 220], [150, 150, 150, 150, 150, 280]],image=new Image(); image.src='../spritesheet.webp';
+let direction=null,sweep=false; const look=document.querySelector('#look');
+function paint(c,row,col){const x=c.getContext('2d');x.clearRect(0,0,192,208);x.drawImage(image,col*192,row*208,192,208,0,0,192,208)}
+function index(ds,t){t%=ds.reduce((a,b)=>a+b,0);for(let i=0;i<ds.length;i++){if(t<ds[i])return i;t-=ds[i]}return 0}
+function tick(t){if(image.complete&&image.naturalWidth){document.querySelectorAll('[data-state]').forEach(c=>{let r=+c.dataset.state;paint(c,r,index(durations[r],t))});let d=sweep?Math.floor(t/220)%16:direction;if(d===null){paint(look,0,index(durations[0],t));document.querySelector('#direction').textContent='Idle / neutral'}else{paint(look,9+Math.floor(d/8),d%8);document.querySelector('#direction').textContent=(d*22.5)+'°'}}requestAnimationFrame(tick)}
+document.querySelector('#lookzone').onpointermove=e=>{sweep=false;const b=e.currentTarget.getBoundingClientRect(),dx=e.clientX-b.left-b.width/2,dy=e.clientY-b.top-b.height/2;direction=Math.hypot(dx,dy)<32?null:Math.round((Math.atan2(dx,-dy)+Math.PI*2)/(Math.PI*2)*16)%16};
+document.querySelector('#lookzone').onpointerleave=()=>direction=null;
+document.querySelector('#sweep').onclick=()=>sweep=!sweep;
+document.querySelector('#theme').onclick=()=>document.body.classList.toggle('light');
+document.querySelector('#size').onchange=e=>document.querySelectorAll('canvas').forEach(c=>{c.style.width=e.target.value+'px';c.style.height=(+e.target.value*208/192)+'px'});
+requestAnimationFrame(tick);
+</script></html>

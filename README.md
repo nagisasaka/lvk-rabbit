@@ -1,8 +1,12 @@
 # LVK Rabbit
 
-An adorable animated pixel-art rabbit for Codex and Petdex.
+A friendly animated rabbit for Codex and Petdex, with soft dimensional shading.
 
-LVK Rabbit is a cream-colored, lop-eared coding companion with round glasses, a mint-green hoodie, and a laptop marked with a four-leaf clover. It was designed in ChatGPT and animated with Codex and OpenAI's Hatch Pet skill.
+LVK Rabbit is a cream-colored, lop-eared coding companion with round glasses, a mint-green hoodie, and a laptop marked with a four-leaf clover. It was designed with ChatGPT and animated with Codex using the community Hatch Pet / hatch-pet-v2 workflow.
+
+**Current release: v2.2.0** — 9 animation states and 16 look directions in the v2 atlas format.
+
+[日本語](README.ja.md)
 
 ![LVK Rabbit idle animation](previews/idle.webp)
 
@@ -16,21 +20,41 @@ LVK Rabbit is a cream-colored, lop-eared coding companion with round glasses, a 
 |---|---|---|
 | ![Failed](previews/failed.webp) | ![Review](previews/review.webp) | ![Jumping](previews/jumping.webp) |
 
-The package also includes right/left running and waving animations (9 standard states in total).
+| Running right | Running left | Waving |
+|---|---|---|
+| ![Running right](previews/running-right.webp) | ![Running left](previews/running-left.webp) | ![Waving](previews/waving.webp) |
+
+### 16 look directions
+
+![Clockwise gaze loop](previews/look.webp)
+
+The v2.2 artwork keeps substantial oval pupils when looking sideways, uses gentler head turns, and restores a joyful jump with raised hands and ears while keeping the resting endpoints at the correct size.
+
+After downloading or cloning, open [the interactive preview](previews/index.html) locally to try pointer-directed gaze and light/dark backgrounds.
 
 ## Install in Codex
 
-Clone or download this repository, then copy `pet.json` and `spritesheet.webp` together into:
+Copy `pet.json` and `spritesheet.webp` together into:
 
 ```text
 ~/.codex/pets/lvk-rabbit/
 ```
 
-Restart your Codex app if needed and select the custom pet using your app's available controls. Availability depends on the Codex client.
+Keep the public package ID `lvk-rabbit`. Use a client that supports `spriteVersionNumber: 2`; custom-pet controls and availability depend on the client. Restart the app if needed and select LVK Rabbit.
 
-## Petdex
+For a client that only supports the v1 atlas, use the existing [v1.1.0 tag](https://github.com/nagisasaka/lvk-rabbit/tree/v1.1.0).
 
-This package uses the Codex / Petdex v1 sprite atlas: 1536 × 1872 pixels, 8 columns × 9 rows, 192 × 208 pixels per frame. It includes 57 used frames and 15 fully transparent unused cells.
+## Atlas and validation
+
+- Release version: **v2.2.0**; sprite format: **2** (these are separate version numbers).
+- Lossless transparent WebP: **1536 × 2288**, 8 columns × 11 rows, 192 × 208 per cell.
+- 57 standard animation frames, 16 clockwise gaze poses, and 1 neutral cell; the remaining 14 cells are transparent.
+- Standard rows: idle, running-right, running-left, waving, jumping, failed, waiting, running (working), review.
+- Gaze rows: 0° through 337.5° in 22.5° steps; 0° means up, 90° right, 180° down, and 270° left. The neutral cell is row 0, column 6 (zero-based).
+
+See the [contact sheet](qa/contact-sheet.png), [direction sheet](qa/look-directions.png), [eye comparison](qa/eyes-before-after.png), [format validation](qa/validation.json), and [visual QA summary](qa/release.json). Visual QA covered both backgrounds and small-size previews; live-app behavior was not tested during this production run.
+
+The published spritesheet is byte-for-byte identical to the approved v2.2 artwork. Previews can be regenerated from it with `python scripts/render_previews.py` in an environment with Pillow installed.
 
 ## License
 

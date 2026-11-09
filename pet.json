@@ -2,5 +2,6 @@
   "id": "lvk-rabbit",
   "displayName": "LVK Rabbit",
   "description": "A curious lop-eared rabbit with round glasses and a mint hoodie, coding on a clover-marked laptop.",
-  "spritesheetPath": "spritesheet.webp"
+  "spritesheetPath": "spritesheet.webp",
+  "spriteVersionNumber": 2
 }

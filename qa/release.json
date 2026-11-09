@@ -1,0 +1,184 @@
+{
+  "release": "v2.2.0",
+  "spriteVersionNumber": 2,
+  "spritesheet_sha256": "d959dd073c169f3fdc658ac4c57dacfb454971bc154427d91c8520a98377036f",
+  "visual_qa": "pass",
+  "qa_note": "Same rabbit identity, cream/pink/mint/gray palette, clean eye-rim separation and substantial oval pupils; joyful jump and all nine animation meanings read correctly; sixteen clockwise gaze poses have no wrong quadrant or reversal.",
+  "direction_semantics": [
+    {
+      "direction": "000",
+      "verdict": "pass",
+      "expected": "up",
+      "observed": "up",
+      "reason": "Both oval pupil cores sit high inside their lenses; face pitches gently upward.",
+      "horizontal_evidence": "Pupils approximately (75.2,81.9) and (116.7,81.9) are horizontally balanced; muzzle remains near head center.",
+      "vertical_evidence": "Pupil boxes y74–91 are in upper lens halves; upper gaze is unmistakable."
+    },
+    {
+      "direction": "022.5",
+      "verdict": "pass",
+      "expected": "up-right",
+      "observed": "up-right",
+      "reason": "Gentle rightward face shift and high pupils combine into upper-right gaze.",
+      "horizontal_evidence": "Pupils and muzzle shift slightly screen-right from the 000 family.",
+      "vertical_evidence": "Both pupils remain above lens centers; face retains upward pitch."
+    },
+    {
+      "direction": "045",
+      "verdict": "pass",
+      "expected": "up-right",
+      "observed": "up-right",
+      "reason": "Rightward aiming becomes clearer while pupils remain elevated.",
+      "horizontal_evidence": "Both pupils occupy right-side lens areas and muzzle moves right of head center.",
+      "vertical_evidence": "Pupils stay high and cheeks/eye line retain upward tilt."
+    },
+    {
+      "direction": "067.5",
+      "verdict": "pass",
+      "expected": "up-right",
+      "observed": "up-right",
+      "reason": "Rightward gaze has a small but readable upper component.",
+      "horizontal_evidence": "Right-side pupil position and muzzle displacement clearly indicate screen-right.",
+      "vertical_evidence": "Pupils remain slightly above the horizontal-right pose, preserving upper quadrant."
+    },
+    {
+      "direction": "090",
+      "verdict": "pass",
+      "expected": "right",
+      "observed": "right",
+      "reason": "Tall oval pupils and muzzle unambiguously aim screen-right.",
+      "horizontal_evidence": "Pupil cores approximately (100.8,93.9) and (139.1,91.2) occupy screen-right sides of lenses; muzzle is right of head midpoint.",
+      "vertical_evidence": "Gaze reads lateral at eye level, between upper-right and lower-right poses."
+    },
+    {
+      "direction": "112.5",
+      "verdict": "pass",
+      "expected": "down-right",
+      "observed": "down-right",
+      "reason": "Rightward face remains clear while pupils and muzzle begin to lower.",
+      "horizontal_evidence": "Pupils remain toward screen-right inside both lenses and muzzle stays right-shifted.",
+      "vertical_evidence": "Pupils settle below the lateral gaze position; slight downward face pitch is visible."
+    },
+    {
+      "direction": "135",
+      "verdict": "pass",
+      "expected": "down-right",
+      "observed": "down-right",
+      "reason": "Lower pupils with retained rightward bias form a readable lower-right gaze.",
+      "horizontal_evidence": "Both pupils remain right of their lens centers; muzzle keeps a small screen-right displacement.",
+      "vertical_evidence": "Pupils occupy lower lens areas and head/cheek line tips downward."
+    },
+    {
+      "direction": "157.5",
+      "verdict": "pass",
+      "expected": "down-right",
+      "observed": "down-right",
+      "reason": "Strong downward gaze keeps a small rightward component before 180.",
+      "horizontal_evidence": "Pupil positions retain slight screen-right bias and muzzle is just right of centered-down pose.",
+      "vertical_evidence": "Both pupils sit low in their lenses; downward face pitch is clear."
+    },
+    {
+      "direction": "180",
+      "verdict": "pass",
+      "expected": "down",
+      "observed": "down",
+      "reason": "Balanced lower pupils and downward face pitch unmistakably indicate down.",
+      "horizontal_evidence": "Pupil cores approximately (77.1,110.4) and (118.1,110.2) are balanced across centered muzzle.",
+      "vertical_evidence": "Pupil boxes y104–118 and y104–117 sit at lower lens portions; downward direction is definite."
+    },
+    {
+      "direction": "202.5",
+      "verdict": "pass",
+      "expected": "down-left",
+      "observed": "down-left",
+      "reason": "Downward face gains a small screen-left bias without reversing.",
+      "horizontal_evidence": "Both pupil centers shift left from the centered-down family and muzzle follows slightly left.",
+      "vertical_evidence": "Pupils stay low in the lenses and face retains downward pitch."
+    },
+    {
+      "direction": "225",
+      "verdict": "pass",
+      "expected": "down-left",
+      "observed": "down-left",
+      "reason": "Clear leftward pupils with downward pitch indicate lower-left gaze.",
+      "horizontal_evidence": "Both pupils occupy left-side lens regions and muzzle shifts left of head midpoint.",
+      "vertical_evidence": "Pupils remain below lens centers and eye line is lower than lateral-left pose."
+    },
+    {
+      "direction": "247.5",
+      "verdict": "pass",
+      "expected": "down-left",
+      "observed": "down-left",
+      "reason": "Strong leftward gaze retains a small readable lower component.",
+      "horizontal_evidence": "Both pupils stay on screen-left sides of lenses; nose/muzzle also aim left.",
+      "vertical_evidence": "Pupils are slightly lower than 270, retaining the lower quadrant."
+    },
+    {
+      "direction": "270",
+      "verdict": "pass",
+      "expected": "left",
+      "observed": "left",
+      "reason": "Tall oval pupils and left-shifted muzzle unambiguously aim screen-left.",
+      "horizontal_evidence": "Pupil cores approximately (51.5,93.4) and (91.7,96.7) occupy screen-left lens sides; muzzle sits left of head midpoint.",
+      "vertical_evidence": "Lateral eye line falls between down-left and up-left families."
+    },
+    {
+      "direction": "292.5",
+      "verdict": "pass",
+      "expected": "up-left",
+      "observed": "up-left",
+      "reason": "Leftward face and slightly lifted pupils combine into upper-left gaze.",
+      "horizontal_evidence": "Both pupils remain toward the screen-left sides of lenses and muzzle remains left-shifted.",
+      "vertical_evidence": "Pupils rise above lateral-left positions and face begins upward pitch."
+    },
+    {
+      "direction": "315",
+      "verdict": "pass",
+      "expected": "up-left",
+      "observed": "up-left",
+      "reason": "Leftward pupils and raised face form a clear upper-left gaze.",
+      "horizontal_evidence": "Pupils and muzzle keep screen-left aiming while beginning to recenter toward up.",
+      "vertical_evidence": "Pupils are high in lenses and eye/cheek line lifts."
+    },
+    {
+      "direction": "337.5",
+      "verdict": "warning",
+      "expected": "up-left",
+      "observed": "up-left",
+      "reason": "Upper-left meaning remains clear; wrap into 000 has a slightly larger face recentering, accepted at normal size.",
+      "horizontal_evidence": "Pupils retain a small screen-left bias and muzzle stays left of the 000 pose.",
+      "vertical_evidence": "Pupils sit high in lenses; upward pitch continues smoothly into 000 without reversal."
+    }
+  ],
+  "review_warnings": [
+    "337.5→000 continuity outlier (1906 differing pixels, center delta 2.06) corresponds to mild face recentering; ordered 96/192 frame sequences show no conspicuous snap, size pop, or semantic discontinuity.",
+    "Jumping stable-slots extraction warning accepted after all five GIF frames and idle→jump→idle sequence were inspected on light/dark backgrounds; bodies remain complete and original-sized endpoints match resting baseline.",
+    "Five enclosed alpha detections (2–5 pixels) are at ear/shoulder negative-space seam boundaries. High-contrast crop inspection shows no accidental hole or stripe inside the mint hoodie.",
+    "Down gaze pupils are mildly foreshortened (final isolated dark cores 127/125 pixels versus idle 169/164), remain visibly oval and substantial at pet size.",
+    "Head-turn reduction is modest; the resulting gaze is gentler, while facial/pupil motion remains visible."
+  ],
+  "blind_direction_validation": {
+    "reviewers": 3,
+    "ok": true,
+    "errors": [],
+    "warnings": []
+  },
+  "backgrounds_reviewed": [
+    "light",
+    "dark"
+  ],
+  "look_preview_sizes": [
+    96,
+    192
+  ],
+  "live_app_tested": false,
+  "approval": "User accepted v2.2 as finished on 2026-11-07",
+  "comparison": "eyes-before-after.png compares the v2.1 production candidate with v2.2; v2.1 was not previously published in this repository.",
+  "publication_checks": {
+    "approved_atlas_bytes_unchanged": true,
+    "preview_files": 10,
+    "preview_frames": 73,
+    "preview_visible_pixels_alpha_and_durations_match_atlas": true,
+    "license_unchanged": true
+  }
+}
