@@ -4,7 +4,7 @@ A friendly animated rabbit for Codex and Petdex, with soft dimensional shading.
 
 LVK Rabbit is a cream-colored, lop-eared coding companion with round glasses, a mint-green hoodie, and a laptop marked with a four-leaf clover. It was designed with ChatGPT and animated with Codex using the community Hatch Pet / hatch-pet-v2 workflow.
 
-**Current release: v2.4.0** — 9 animation states and 16 look directions in the v2 atlas format.
+**Current release: v2.4.1** — 9 animation states and 16 look directions in the v2 atlas format.
 
 [日本語](README.ja.md)
 
@@ -24,6 +24,10 @@ LVK Rabbit is a cream-colored, lop-eared coding companion with round glasses, a 
 |---|---|---|
 | ![Running right](previews/running-right.webp) | ![Running left](previews/running-left.webp) | ![Waving](previews/waving.webp) |
 
+### Failed: a recoverable setback
+
+Failure is an everyday part of development. Repeatedly seeing a deeply sad companion can add emotional weight to an ordinary setback, especially for people who empathize with the character. LVK Rabbit's Failed expression aims for a clear but gently comic “Oops!”—acknowledging the problem while feeling ready to try again together.
+
 ### 16 look directions
 
 ![Clockwise gaze loop](previews/look.webp)
@@ -32,15 +36,17 @@ The v2.2 gaze and jump improvements are preserved: the artwork keeps substantial
 
 After downloading or cloning, open [the interactive preview](previews/index.html) locally to try pointer-directed gaze and light/dark backgrounds.
 
-## New in v2.4.0
+## New in v2.4.1
 
-Failed now keeps a seated body close to Idle's height, with rounded paws holding a bowed head, a lowered hair tuft, and a prominent blue sweat drop. The sweat uses the rabbit's brown outline and clear two-tone shading. The restrained loop stays visibly troubled throughout, with no return to a waiting pose.
+Failed adds a single wide manga-style cross across both eye positions. It follows the bowed head's gentle sway and sits behind the paws, giving failure a clear, gently comic expression while preserving the outlined blue sweat.
 
-Waving now matches Idle's mint-green hoodie color as well as its cream fur. Its approved shape, timing, and transparency are preserved. Compared with v2.3.0, only eight `failed` frames and four `waving` frames changed; the other seven states, neutral cell, and all sixteen look directions are pixel-identical.
+Waving's raised sleeve is subtly fuller, with its brown contour adjusted for consistent weight. The approved arm length, angle, paw, cuff and mint palette are preserved.
 
-[Failed before/after](previews/failed-before-after-light.gif) · [Small dark-background Failed comparison](previews/failed-before-after-dark-small.gif) · [Idle → Failed → Idle](previews/idle-failed-idle-light.gif) · [Waving hoodie-color comparison](previews/idle-wave-idle-light.gif).
+Only eight `failed` frames and four `waving` frames changed from v2.4.0. The other seven states, neutral cell, all sixteen look directions and the entire atlas alpha channel are unchanged. This is an optional visual polish update; package format and client event mapping are unchanged.
 
-These compare the published v2.3.0 artwork with v2.4.0. Client event-to-animation mapping was not changed.
+[Failed before/after](previews/failed-before-after-light.gif) · [Small dark-background Failed comparison](previews/failed-before-after-dark-small.gif) · [Idle → Failed → Idle](previews/idle-failed-idle-light.gif) · [Waving before/after](previews/idle-wave-idle-light.gif).
+
+These compare the published v2.4.0 artwork with v2.4.1.
 
 ## Install in Codex
 
@@ -56,7 +62,7 @@ For a client that only supports the v1 atlas, use the existing [v1.1.0 tag](http
 
 ## Atlas and validation
 
-- Release version: **v2.4.0**; sprite format: **2** (these are separate version numbers).
+- Release version: **v2.4.1**; sprite format: **2** (these are separate version numbers).
 - Lossless transparent WebP: **1536 × 2288**, 8 columns × 11 rows, 192 × 208 per cell.
 - 57 standard animation frames, 16 clockwise gaze poses, and 1 neutral cell; the remaining 14 cells are transparent.
 - Standard rows: idle, running-right, running-left, waving, jumping, failed, waiting, running (working), review.
@@ -64,7 +70,7 @@ For a client that only supports the v1 atlas, use the existing [v1.1.0 tag](http
 
 See the [contact sheet](qa/contact-sheet.png), [direction sheet](qa/look-directions.png), [eye comparison](qa/eyes-before-after.png), [format validation](qa/validation.json), and [visual QA summary](qa/release.json). Visual QA covered both backgrounds and small-size previews; live-app behavior was not tested during this production run.
 
-The published spritesheet is byte-for-byte identical to the approved outlined-sweat Failed artwork, including the approved mint-matched attention wave. Previews can be regenerated from it with `python scripts/render_previews.py` in an environment with Pillow installed.
+The published Failed and Waving rows are pixel-identical to their approved cross-eyes and consistent-outline candidates; all other cells are retained from v2.4.0. Previews can be regenerated from it with `python scripts/render_previews.py` in an environment with Pillow installed.
 
 ## Release automation
 

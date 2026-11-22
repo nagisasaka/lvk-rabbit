@@ -1,0 +1,40 @@
+LVK Rabbit v2.4.1 — コミカルなFailedと、手振りの腕・輪郭の微調整。 / Comic Failed eyes and a subtly fuller waving sleeve.
+
+![LVK Rabbit Failed](https://raw.githubusercontent.com/nagisasaka/lvk-rabbit/v2.4.1/previews/failed.webp)
+
+## 日本語
+
+- Failedに横長のバツ目を追加。頭の揺れに追従し、両端は手の後ろへ自然に隠れます。失敗を明確に、少しコミカルに伝えます。
+- Wavingの上げた袖をほんの少し太くし、輪郭線の太さを統一。腕の長さ・角度・手・袖口・ミント色は維持しています。
+- READMEに、日常的な開発の失敗でキャラクターを深く悲しませすぎず、一緒に再挑戦できる雰囲気を目指す設計意図を追記しました。
+- v2.4.0から変更したのはFailedの8コマとWavingの4コマ。他7状態・正面セル・16方向と、全体の透過情報は同一です。
+
+**更新は任意です。** 見た目の微調整で、パッケージ形式やクライアント側の状態割り当ては変わりません。
+
+**導入:** `lvk-rabbit-v2.4.1.zip` を展開し、既存版をバックアップしてから `lvk-rabbit` フォルダーを `~/.codex/pets/` に配置してください。Pet IDは従来の `lvk-rabbit` です。
+
+## English
+
+- Failed gains one wide manga-style cross across both eyes, following the bowed head and naturally hidden behind the paws. Failure reads clearly with a gently comic expression.
+- Waving's raised sleeve is subtly fuller with more consistent contour weight. Arm length, angle, paw, cuff and mint palette are preserved.
+- The README explains the design intent: everyday development failures should feel recoverable, without a deeply sad companion adding emotional weight.
+- Only eight Failed frames and four Waving frames changed from v2.4.0. Seven other states, the neutral cell, all sixteen look directions and the entire alpha channel are unchanged.
+
+**Optional visual polish update.** Package format and client event-to-animation mapping are unchanged.
+
+**Install:** Extract `lvk-rabbit-v2.4.1.zip`, back up your current pet, then place its `lvk-rabbit` folder in `~/.codex/pets/`. The public pet ID remains unchanged.
+
+## Compatibility & validation / 互換性・検証
+
+Sprite format: `spriteVersionNumber: 2`, 1536×2288 lossless transparent WebP. For v1-only clients, use [v1.1.0](https://github.com/nagisasaka/lvk-rabbit/releases/tag/v1.1.0).
+
+[Documentation / ドキュメント](https://github.com/nagisasaka/lvk-rabbit/tree/v2.4.1) · [Format validation / 形式検証](https://github.com/nagisasaka/lvk-rabbit/blob/v2.4.1/qa/validation.json) · [Visual QA / 視覚QA](https://github.com/nagisasaka/lvk-rabbit/blob/v2.4.1/qa/release.json)
+
+[Failed before/after / 新旧比較](https://github.com/nagisasaka/lvk-rabbit/blob/v2.4.1/previews/failed-before-after-light.gif) · [Waving before/after / 手振り比較](https://github.com/nagisasaka/lvk-rabbit/blob/v2.4.1/previews/idle-wave-idle-light.gif)
+
+Format validation and light/dark visual QA at 96/192px passed. Visual QA used chronological frame inspection; live client playback was not tested during production.
+形式検証とライト／ダーク背景・96／192pxの視覚QAに合格しています。視覚QAは時系列フレームの確認で、制作時の実アプリ内再生は未検証です。
+
+Published through GitHub Actions. `SHA256SUMS.txt` verifies the Pet ZIP download.
+
+CC BY 4.0 — LVK Rabbit by Masato Fujino. See the included LICENSE.

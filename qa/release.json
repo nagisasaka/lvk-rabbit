@@ -1,9 +1,9 @@
 {
-  "release": "v2.4.0",
+  "release": "v2.4.1",
   "spriteVersionNumber": 2,
-  "spritesheet_sha256": "69ec78f88808b6860fff7e77870b2e55bebfa1f2f453f20ef930d7787007740d",
+  "spritesheet_sha256": "e2eb66d241d968c3d301307415f72b2448cdae2b676107c3753fc82646f98da2",
   "visual_qa": "pass",
-  "qa_note": "Approved upright head-holding Failed with larger round paws, lowered tuft and brown-outlined blue sweat with ear-like two-tone shading. Includes approved mint hoodie correction for waving.",
+  "qa_note": "Approved comic Failed cross-eyes following head sway behind paws; slightly fuller Waving sleeve with consistent brown contour. Both rows copied pixel-for-pixel from approved local candidates.",
   "direction_semantics": [
     {
       "direction": "000",
@@ -172,12 +172,12 @@
     192
   ],
   "live_app_tested": false,
-  "approval": "User selected outlined-sweat v6 and explicitly authorized GitHub/Release publication on 2026-11-23.",
+  "approval": "User approved the corrected Waving outline and release; preceding Failed cross-eyes and design rationale approved in the same session.",
   "comparison": "eyes-before-after.png compares the v2.1 production candidate with v2.2; v2.1 was not previously published in this repository.",
   "publication_checks": {
-    "approved_atlas_bytes_unchanged": true,
-    "unchanged_cells_vs_v2_3_0": 76,
-    "changed_cells_vs_v2_3_0": [
+    "approved_rows_pixel_identical": true,
+    "unchanged_cells_vs_v2_4_0": 76,
+    "changed_cells_vs_v2_4_0": [
       [
         3,
         0
@@ -227,52 +227,206 @@
         7
       ]
     ],
-    "waving_matches_approved_mint_correction": true,
+    "whole_atlas_alpha_identical": true,
+    "license_unchanged": true,
+    "public_pet_metadata_unchanged": true,
     "preview_files": 10,
     "preview_frames": 73,
-    "preview_visible_pixels_alpha_and_durations_match_atlas": true,
-    "license_unchanged": true,
-    "public_pet_metadata_unchanged": true
+    "preview_visible_pixels_alpha_and_durations_match_atlas": true
   },
-  "inherited_qa": "Direction semantics, blind direction review, eye comparison and jump review inherited from v2.2.0; those cells are pixel-identical. Cream fur correction inherited from v2.3.0; final hoodie-only wave correction independently reviewed.",
+  "inherited_qa": "Direction, idle and jumping QA inherited from earlier releases; all seven unchanged states, neutral and sixteen look directions remain pixel-identical to v2.4.0.",
   "wave_qa": {
     "visual_qa": "pass",
-    "reviewer": "/root/attention_wave_qa",
-    "atlas_sha256": "9751a89a47a57b4722d81d5e07db14995664ee9d4977322a300442a7f810a148",
-    "scope": "Hoodie color-only change; all other cells and look directions unchanged.",
-    "evidence": [
-      "Raised sleeve and torso match Idle mint family; gray-green shift resolved.",
-      "Soft original clothing shading remains; no visible mottling, hard mask seams, missing cloth, halos or alpha damage.",
-      "Fur, pink ears/blush, eyes, laptop and gesture geometry visually unchanged.",
-      "All 20 chronological frames of each light/dark Idle-wave-Idle GIF reviewed at 96px and 192px; 3600ms total each.",
-      "84 other cells and whole-atlas alpha identical; frame and atlas validation pass."
+    "verdict": "pass",
+    "review_scope": "Independent targeted QA of waving contour correction; existing other rows checked on atlas overview and verified pixel-identical. No new direction-semantic certification.",
+    "reviewed_at_utc": "2026-11-22T20:26:12.648303+00:00",
+    "atlas_path": "/workspace/lvk_rabbit_codex_trial/output/lvk-rabbit-v2-4-wave-outline-v2/final/spritesheet.webp",
+    "atlas_sha256": "9b9890a10695563f487220325663d9853f64d728bbe60c20b4760751431b17c6",
+    "review_method": "Visual inspection of enlarged before/after crops, all four native animation frames decoded from waving-after.webp in chronological order 0,1,2,3,0 on light/dark backgrounds at 192 and 96 pixel widths, and atlas contact sheet. Static sequential review, not live client playback.",
+    "inspected_artifacts": [
+      "qa/outline-closeups.png",
+      "qa/waving-contact-sheet.png",
+      "qa/comparison-light-192.png",
+      "qa/comparison-dark-192.png",
+      "qa/comparison-light-96.png",
+      "qa/comparison-dark-96.png",
+      "qa/waving-after.webp",
+      "qa/atlas-contact-sheet.png",
+      "qa/preservation.json",
+      "qa/validation.json",
+      "qa/frame-inspection.json",
+      "qa/preview-checks.json",
+      "qa/line-width-check.json"
+    ],
+    "findings": [
+      "All four repaired frames read as a continuous brown sleeve contour from cuff through midarm to shoulder/elbow; the previous narrow middle followed by conspicuously heavy elbow is sufficiently resolved at both 192 and 96 pixel display widths.",
+      "The approved broad sleeve silhouette, paw size, cuff position, arm length and raised-arm pose remain visually unchanged in the before/after comparisons. The arm still reads as the same approved width.",
+      "No new visible seam, doubled contour, isolated speckle or objectionable jagged edge appears at native or half size on either background.",
+      "The mint fabric and warm brown outline remain perceptually matched to the original. Changes are localized to outline masks; this is not a claim that every mint-edge antialias pixel is identical.",
+      "Chronological inspection of frames 0,1,2,3 and the 3-to-0 wrap shows stable line weight without a conspicuous contour pop. Paw motion and timing remain the original small wave.",
+      "Independent decoded RGBA comparison confirms exactly four changed cells (row 3, columns 0-3), 84 completely unchanged cells, whole-atlas alpha equality, and zero changed pixels outside the provided local masks.",
+      "All four animated preview frames match the corresponding final atlas cells byte-for-byte after RGBA decoding; PNG and WebP atlas pixels also match. Validation and frame inspection report no errors or warnings."
+    ],
+    "per_frame": [
+      {
+        "frame": 0,
+        "verdict": "pass",
+        "reason": "Continuous sleeve-edge weight at 192/96 pixels; preserved cuff, paw, sleeve width and mint appearance; no new seam or double line."
+      },
+      {
+        "frame": 1,
+        "verdict": "pass",
+        "reason": "Continuous sleeve-edge weight at 192/96 pixels; preserved cuff, paw, sleeve width and mint appearance; no new seam or double line."
+      },
+      {
+        "frame": 2,
+        "verdict": "pass",
+        "reason": "Continuous sleeve-edge weight at 192/96 pixels; preserved cuff, paw, sleeve width and mint appearance; no new seam or double line."
+      },
+      {
+        "frame": 3,
+        "verdict": "pass",
+        "reason": "Continuous sleeve-edge weight at 192/96 pixels; preserved cuff, paw, sleeve width and mint appearance; no new seam or double line."
+      }
     ],
     "warnings": [
-      "Pose-dependent shading differs slightly from Idle."
+      "Enlarged crops expose existing raster stair steps and a naturally heavier intersection where the sleeve edge meets the face/shoulder line. These do not read as a persistent thin-middle/thick-elbow break at the intended sizes."
     ],
     "limitations": [
-      "Static chronological frame review, not live Codex playback."
+      "No live Codex client playback was performed; loop assessment uses decoded chronological frames and recorded durations.",
+      "This review is specific to the repaired waving row; unchanged gaze rows were not subjected to a new independent blind direction test.",
+      "Stroke-width estimates exclude contour intersections and are not exact vector measurements; they support but do not determine the visual verdict."
     ],
-    "reuse_note": "Current release waving row matches this separately reviewed source pixel-for-pixel; the full atlas differs only in Failed."
+    "independent_pixel_checks": {
+      "atlas_sha256": "9b9890a10695563f487220325663d9853f64d728bbe60c20b4760751431b17c6",
+      "png_sha256": "6749a5c953c3e5bcfca9a596d6969632cb52a25e4458a38f15fabc1f9050bb06",
+      "size": [
+        1536,
+        2288
+      ],
+      "changed_cells": [
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "unchanged_cells": 84,
+      "alpha_identical": true,
+      "png_webp_rgba_identical": true,
+      "frames": [
+        {
+          "index": 0,
+          "changed_pixels": 251,
+          "bbox": [
+            38,
+            92,
+            78,
+            123
+          ],
+          "changed_outside_mask": 0,
+          "preview_equals_atlas": true,
+          "duration_ms": 140
+        },
+        {
+          "index": 1,
+          "changed_pixels": 249,
+          "bbox": [
+            40,
+            92,
+            78,
+            123
+          ],
+          "changed_outside_mask": 0,
+          "preview_equals_atlas": true,
+          "duration_ms": 140
+        },
+        {
+          "index": 2,
+          "changed_pixels": 250,
+          "bbox": [
+            36,
+            92,
+            78,
+            123
+          ],
+          "changed_outside_mask": 0,
+          "preview_equals_atlas": true,
+          "duration_ms": 140
+        },
+        {
+          "index": 3,
+          "changed_pixels": 248,
+          "bbox": [
+            40,
+            92,
+            78,
+            123
+          ],
+          "changed_outside_mask": 0,
+          "preview_equals_atlas": true,
+          "duration_ms": 280
+        }
+      ],
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "warnings": []
+      },
+      "frame-inspection": {
+        "ok": true,
+        "errors": [],
+        "warnings": []
+      }
+    },
+    "repair_rows": [],
+    "repair_notes": [],
+    "supporting_line_width_estimates": {
+      "method": "50% green-channel ink crossings on isolated clean edge cross-sections, normalized perpendicular to local contour; excludes intersecting head/ear lines. Antialiasing/materials make these estimates, not exact vector stroke widths.",
+      "samples": 104,
+      "before_mean": 2.7900384615384617,
+      "after_mean": 3.0056538461538462,
+      "before_stdev": 0.32473856120900496,
+      "after_stdev": 0.2444167614024003
+    },
+    "reviewer": "/root/wave_outline_qa",
+    "reuse_note": "Relevant animation row matches this reviewed source pixel-for-pixel; full atlas hash differs because both approved rows are combined."
   },
   "failed_qa": {
     "visual_qa": "pass",
-    "reviewer": "/root/attention_wave_qa",
-    "atlas_sha256": "69ec78f88808b6860fff7e77870b2e55bebfa1f2f453f20ef930d7787007740d",
+    "scope": "Independent repaired failed-row visual QA; unchanged rows covered by preservation evidence.",
+    "qa_note": "The lowered, slightly thicker single elongated brown X follows the bowed head through all eight frames, with ends visually tucked behind both original paws and clear readability at 96 and 192 px on light and dark backgrounds.",
+    "findings": [
+      "Previous exposed upper endpoints in frames 1, 2 and 6 are resolved; frame 6 meets the left paw outline without a conspicuous detached tip.",
+      "Stroke weight now visually agrees with the rabbit outline; brown palette and rounded stroke treatment are coherent.",
+      "Chronological native WebP frames show consistent head-attached placement and X shape; no conspicuous added shape jump or 7-to-0 discontinuity.",
+      "Paw silhouettes remain intact and create natural foreground occlusion.",
+      "Preservation report confirms 80 unchanged cells, all 16 look directions unchanged, whole-atlas alpha identical and original paw pixels preserved."
+    ],
+    "deterministic_checks": {
+      "preservation": true,
+      "validation": true,
+      "frame-inspection": true
+    },
+    "review_warnings": [],
     "repair_rows": [],
-    "evidence": [
-      "Brown sweatoutline matches rabbithead/paw lineweight reasonably96/192px, notadarkblob.",
-      "Lightblue fill anddarkerlower-rightshadow give clear ear-like2toneshading, no glossywhitecrescent/dots.",
-      "All8frames sweatattached,rightpawvisible; no conspicuous contourbreaks,halos,straypixels orcolorjumps.",
-      "Alphaidentical,nonsweatpixelsunchanged,80othercellsunchanged; frameformatpasses.",
-      "Currentcomparison/contact/atlas andeverychronologicalcomparisonGIFframe reviewedlight/dark96/192."
-    ],
-    "warnings": [
-      "Slightpixelstepping onpointedcontour at192especiallyGIF; unobtrusive96."
-    ],
-    "limitations": [
-      "Static frameinspection,not liveclientplayback."
-    ]
+    "repair_notes": null,
+    "limitations": "Static chronological inspection of native WebP frames and 96/192 px light/dark QA images, not live client playback. No fresh semantic revalidation of unchanged look-direction rows.",
+    "assets_edited": false,
+    "atlas_sha256": "bf6da325e8aa9401d58083102b39849a7ab04f88cbe32b699fc2b16bb53bb227",
+    "reviewer": "/root/cross_eyes_qa",
+    "reuse_note": "Relevant animation row matches this reviewed source pixel-for-pixel; full atlas hash differs because both approved rows are combined."
   },
   "hoodie_color_match": {
     "method": "Generated clothing color reference reviewed; final constant RGB offsets calibrated from original clothing to actual Idle torso medians; original shading contrast retained. Soft green-only fabric mask excludes laptop. Original pixel positions and alpha untouched.",
@@ -382,6 +536,7 @@
         "laptop_region_identical": true,
         "outside_clothing_mask_identical": true
       }
-    ]
+    ],
+    "scope_note": "Historical v2.4.0 color matching record. The current raised sleeve additionally includes approved width and contour repairs; its torso and other states retain these colors."
   }
 }
