@@ -1,9 +1,9 @@
 {
-  "release": "v2.3.0",
+  "release": "v2.4.0",
   "spriteVersionNumber": 2,
-  "spritesheet_sha256": "e0052baaf4ca04071b40f4bcaf0bb8439e72b999068cc5f8bf884b088be12fa5",
+  "spritesheet_sha256": "69ec78f88808b6860fff7e77870b2e55bebfa1f2f453f20ef930d7787007740d",
   "visual_qa": "pass",
-  "qa_note": "Approved upright, compact double wave with cream fur matched to Idle. Eight other animation rows, neutral cell, and all sixteen look directions remain pixel-identical to v2.2.0.",
+  "qa_note": "Approved upright head-holding Failed with larger round paws, lowered tuft and brown-outlined blue sweat with ear-like two-tone shading. Includes approved mint hoodie correction for waving.",
   "direction_semantics": [
     {
       "direction": "000",
@@ -153,9 +153,9 @@
   "review_warnings": [
     "337.5→000 continuity outlier (1906 differing pixels, center delta 2.06) corresponds to mild face recentering; ordered 96/192 frame sequences show no conspicuous snap, size pop, or semantic discontinuity.",
     "Jumping stable-slots extraction warning accepted after all five GIF frames and idle→jump→idle sequence were inspected on light/dark backgrounds; bodies remain complete and original-sized endpoints match resting baseline.",
-    "Five enclosed alpha detections (2–5 pixels) are at ear/shoulder negative-space seam boundaries. High-contrast crop inspection shows no accidental hole or stripe inside the mint hoodie.",
     "Down gaze pupils are mildly foreshortened (final isolated dark cores 127/125 pixels versus idle 169/164), remain visibly oval and substantial at pet size.",
-    "Head-turn reduction is modest; the resulting gaze is gentler, while facial/pupil motion remains visible."
+    "Head-turn reduction is modest; the resulting gaze is gentler, while facial/pupil motion remains visible.",
+    "Failed sweat pointed contour has slight pixel stepping at 192px, especially in GIFs; unobtrusive at 96px."
   ],
   "blind_direction_validation": {
     "reviewers": 3,
@@ -172,12 +172,12 @@
     192
   ],
   "live_app_tested": false,
-  "approval": "User accepted the final color-matched attention wave on 2026-11-22",
+  "approval": "User selected outlined-sweat v6 and explicitly authorized GitHub/Release publication on 2026-11-23.",
   "comparison": "eyes-before-after.png compares the v2.1 production candidate with v2.2; v2.1 was not previously published in this repository.",
   "publication_checks": {
     "approved_atlas_bytes_unchanged": true,
-    "unchanged_cells_vs_v2_2_0": 84,
-    "changed_cells": [
+    "unchanged_cells_vs_v2_3_0": 76,
+    "changed_cells_vs_v2_3_0": [
       [
         3,
         0
@@ -193,192 +193,195 @@
       [
         3,
         3
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        7
       ]
     ],
+    "waving_matches_approved_mint_correction": true,
     "preview_files": 10,
     "preview_frames": 73,
     "preview_visible_pixels_alpha_and_durations_match_atlas": true,
-    "license_unchanged": true
+    "license_unchanged": true,
+    "public_pet_metadata_unchanged": true
   },
-  "inherited_qa": "Direction semantics, blind direction review, eye comparison and jump review are inherited from v2.2.0; those cells are unchanged.",
+  "inherited_qa": "Direction semantics, blind direction review, eye comparison and jump review inherited from v2.2.0; those cells are pixel-identical. Cream fur correction inherited from v2.3.0; final hoodie-only wave correction independently reviewed.",
   "wave_qa": {
-    "verdict": "pass",
-    "scope": "Color v6: match cream fur to Idle while preserving approved upright v5 pose geometry.",
-    "spritesheet_sha256": "e0052baaf4ca04071b40f4bcaf0bb8439e72b999068cc5f8bf884b088be12fa5",
-    "method": "Independent inspection of complete color contact sheet,96px/192px light/dark skin comparisons, and all20 chronological frames from each of four Idle-wave-Idle GIFs. Read color-match and formal validation reports.",
-    "live_playback_tested": false,
-    "live_client_state_mapping_tested": false,
-    "checks": {
-      "fur_palette_match": "pass: prior peach/darker cast in waving face, raised paw and feet is removed. New cream coloration visibly aligns with Idle on both backgrounds at96px and192px, without turning the rabbit stark white.",
-      "transition_color_consistency": "pass at frame-sequence level: corrected wave frames no longer show the conspicuous darker/pinker face-and-foot change seen in the before sequence. Each GIF has20frames totaling3600ms, including direct Idle-wave and wave-Idle boundaries.",
-      "shading_preservation": "pass visually: soft warm shading around muzzle, face perimeter, paw and feet remains visible; highlights and shadows retain dimension rather than becoming a flat opaque fill.",
-      "mask_boundaries": "pass visually: no obvious hard rectangular/scanline masks, abrupt color seams at cheek blush/ear pink/feet, or pale outline halo in reviewed192px and96px images.",
-      "eyes_and_cuteness": "pass: substantial oval dark pupils, clear round glasses, open friendly smile and cheek blush retain the approved expression.",
-      "geometry_and_transparency": "pass from report plus visual comparisons: whole atlas alpha is bit-identical to v5, dark linework and green hoodie pixels unchanged, and only fur RGB altered; approved compact upright arm/paw path and body shape visually unchanged. No new alpha issue visible.",
-      "format_and_scope": "pass: saved row and atlas checks each ok=true with no errors/warnings;84othercells unchanged."
-    },
-    "notes": [
-      "Color equality is calibrated at representative face/foot samples; this does not mean every shaded fur pixel is identical to an Idle pixel. Remaining local shading is intentional and looks coherent.",
-      "Previously approved pose/expression changes at Idle-wave transitions remain; this review judges their color consistency, not a new motion interpolation.",
-      "No real-time Codex playback or actual approval-state dispatch was tested; assessment uses decoded chronological GIF frames."
+    "visual_qa": "pass",
+    "reviewer": "/root/attention_wave_qa",
+    "atlas_sha256": "9751a89a47a57b4722d81d5e07db14995664ee9d4977322a300442a7f810a148",
+    "scope": "Hoodie color-only change; all other cells and look directions unchanged.",
+    "evidence": [
+      "Raised sleeve and torso match Idle mint family; gray-green shift resolved.",
+      "Soft original clothing shading remains; no visible mottling, hard mask seams, missing cloth, halos or alpha damage.",
+      "Fur, pink ears/blush, eyes, laptop and gesture geometry visually unchanged.",
+      "All 20 chronological frames of each light/dark Idle-wave-Idle GIF reviewed at 96px and 192px; 3600ms total each.",
+      "84 other cells and whole-atlas alpha identical; frame and atlas validation pass."
     ],
-    "warnings": [],
-    "failures": []
+    "warnings": [
+      "Pose-dependent shading differs slightly from Idle."
+    ],
+    "limitations": [
+      "Static chronological frame review, not live Codex playback."
+    ],
+    "reuse_note": "Current release waving row matches this separately reviewed source pixel-for-pixel; the full atlas differs only in Failed."
   },
-  "color_match": {
-    "source_face": [
-      246.0,
-      216.0,
-      200.0
+  "failed_qa": {
+    "visual_qa": "pass",
+    "reviewer": "/root/attention_wave_qa",
+    "atlas_sha256": "69ec78f88808b6860fff7e77870b2e55bebfa1f2f453f20ef930d7787007740d",
+    "repair_rows": [],
+    "evidence": [
+      "Brown sweatoutline matches rabbithead/paw lineweight reasonably96/192px, notadarkblob.",
+      "Lightblue fill anddarkerlower-rightshadow give clear ear-like2toneshading, no glossywhitecrescent/dots.",
+      "All8frames sweatattached,rightpawvisible; no conspicuous contourbreaks,halos,straypixels orcolorjumps.",
+      "Alphaidentical,nonsweatpixelsunchanged,80othercellsunchanged; frameformatpasses.",
+      "Currentcomparison/contact/atlas andeverychronologicalcomparisonGIFframe reviewedlight/dark96/192."
     ],
-    "source_feet": [
-      245.0,
-      215.0,
-      199.0
+    "warnings": [
+      "Slightpixelstepping onpointedcontour at192especiallyGIF; unobtrusive96."
     ],
-    "donor_face": [
-      249.0,
-      232.0,
-      214.5
+    "limitations": [
+      "Static frameinspection,not liveclientplayback."
+    ]
+  },
+  "hoodie_color_match": {
+    "method": "Generated clothing color reference reviewed; final constant RGB offsets calibrated from original clothing to actual Idle torso medians; original shading contrast retained. Soft green-only fabric mask excludes laptop. Original pixel positions and alpha untouched.",
+    "torso_roi": [
+      45,
+      110,
+      140,
+      145
     ],
-    "donor_feet": [
-      251.0,
-      236.5,
-      219.5
+    "source_median": [
+      133,
+      164,
+      136
     ],
-    "target_face": [
-      253.0,
-      237.0,
-      220.0
+    "generated_reference_median": [
+      177,
+      221,
+      182
     ],
-    "target_feet": [
-      253.0,
-      235.0,
-      215.0
+    "idle_target_median": [
+      148,
+      212,
+      169
     ],
-    "face_rgb_offset": [
-      7.0,
-      21.0,
-      20.0
+    "clothing_rgb_offsets": [
+      15.0,
+      48.0,
+      33.0
     ],
-    "feet_rgb_offset": [
-      8.0,
-      20.0,
-      16.0
-    ],
-    "whole_atlas_alpha_identical": true,
     "unchanged_cells": 84,
-    "unmodified_outside_fur_mask": true,
+    "whole_atlas_alpha_identical": true,
+    "geometry_resampling": false,
     "frames": [
       {
         "frame": 0,
-        "changed_pixels": 7620,
+        "changed_clothing_pixels": 2305,
+        "torso_median_before": [
+          135,
+          165,
+          138
+        ],
+        "torso_median_after": [
+          150,
+          213,
+          171
+        ],
         "alpha_identical": true,
-        "dark_ink_changed": 0,
-        "green_pixels_changed": 0,
-        "forehead_before": [
-          246.0,
-          216.0,
-          200.0
-        ],
-        "forehead_after": [
-          253.0,
-          237.0,
-          220.0
-        ],
-        "foot_before": [
-          245.0,
-          215.0,
-          199.0
-        ],
-        "foot_after": [
-          253.0,
-          235.0,
-          215.0
-        ]
+        "fur_and_pink_pixels_identical": true,
+        "dark_linework_identical": true,
+        "laptop_region_identical": true,
+        "outside_clothing_mask_identical": true
       },
       {
         "frame": 1,
-        "changed_pixels": 7520,
+        "changed_clothing_pixels": 2259,
+        "torso_median_before": [
+          134,
+          164,
+          136
+        ],
+        "torso_median_after": [
+          149,
+          212,
+          169
+        ],
         "alpha_identical": true,
-        "dark_ink_changed": 0,
-        "green_pixels_changed": 0,
-        "forehead_before": [
-          246,
-          216,
-          199
-        ],
-        "forehead_after": [
-          253,
-          237,
-          219
-        ],
-        "foot_before": [
-          245.0,
-          215.0,
-          199.0
-        ],
-        "foot_after": [
-          253.0,
-          235.0,
-          215.0
-        ]
+        "fur_and_pink_pixels_identical": true,
+        "dark_linework_identical": true,
+        "laptop_region_identical": true,
+        "outside_clothing_mask_identical": true
       },
       {
         "frame": 2,
-        "changed_pixels": 7638,
+        "changed_clothing_pixels": 2325,
+        "torso_median_before": [
+          133,
+          163,
+          135
+        ],
+        "torso_median_after": [
+          148,
+          211,
+          168
+        ],
         "alpha_identical": true,
-        "dark_ink_changed": 0,
-        "green_pixels_changed": 0,
-        "forehead_before": [
-          246.0,
-          216.0,
-          200.0
-        ],
-        "forehead_after": [
-          253.0,
-          237.0,
-          220.0
-        ],
-        "foot_before": [
-          246.0,
-          215.5,
-          199.0
-        ],
-        "foot_after": [
-          254.0,
-          235.5,
-          215.0
-        ]
+        "fur_and_pink_pixels_identical": true,
+        "dark_linework_identical": true,
+        "laptop_region_identical": true,
+        "outside_clothing_mask_identical": true
       },
       {
         "frame": 3,
-        "changed_pixels": 7496,
+        "changed_clothing_pixels": 2275,
+        "torso_median_before": [
+          132,
+          164,
+          136
+        ],
+        "torso_median_after": [
+          147,
+          211,
+          169
+        ],
         "alpha_identical": true,
-        "dark_ink_changed": 0,
-        "green_pixels_changed": 0,
-        "forehead_before": [
-          246.0,
-          216.0,
-          200.0
-        ],
-        "forehead_after": [
-          253.0,
-          237.0,
-          220.0
-        ],
-        "foot_before": [
-          245.0,
-          215.0,
-          199.0
-        ],
-        "foot_after": [
-          253.0,
-          235.0,
-          215.0
-        ]
+        "fur_and_pink_pixels_identical": true,
+        "dark_linework_identical": true,
+        "laptop_region_identical": true,
+        "outside_clothing_mask_identical": true
       }
-    ],
-    "geometry_reference": "Approved upright wave prototype; the final correction changed only fur RGB, preserving all alpha and dark linework."
+    ]
   }
 }

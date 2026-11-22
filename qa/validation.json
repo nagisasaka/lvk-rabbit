@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "file": "spritesheet.webp",
+  "file": "/workspace/lvk-rabbit/spritesheet.webp",
   "format": "WEBP",
   "mode": "RGBA",
   "columns": 8,
@@ -391,7 +391,7 @@
       "row": 5,
       "column": 0,
       "used": true,
-      "nontransparent_pixels": 13423,
+      "nontransparent_pixels": 21516,
       "opaque_chroma_key_pixels": 0,
       "chroma_fringe_pixels": 0
     },
@@ -400,7 +400,7 @@
       "row": 5,
       "column": 1,
       "used": true,
-      "nontransparent_pixels": 13470,
+      "nontransparent_pixels": 21483,
       "opaque_chroma_key_pixels": 0,
       "chroma_fringe_pixels": 0
     },
@@ -409,7 +409,7 @@
       "row": 5,
       "column": 2,
       "used": true,
-      "nontransparent_pixels": 13479,
+      "nontransparent_pixels": 21305,
       "opaque_chroma_key_pixels": 0,
       "chroma_fringe_pixels": 0
     },
@@ -418,7 +418,7 @@
       "row": 5,
       "column": 3,
       "used": true,
-      "nontransparent_pixels": 13309,
+      "nontransparent_pixels": 21594,
       "opaque_chroma_key_pixels": 0,
       "chroma_fringe_pixels": 0
     },
@@ -427,7 +427,7 @@
       "row": 5,
       "column": 4,
       "used": true,
-      "nontransparent_pixels": 13487,
+      "nontransparent_pixels": 21634,
       "opaque_chroma_key_pixels": 0,
       "chroma_fringe_pixels": 0
     },
@@ -436,7 +436,7 @@
       "row": 5,
       "column": 5,
       "used": true,
-      "nontransparent_pixels": 13402,
+      "nontransparent_pixels": 21564,
       "opaque_chroma_key_pixels": 0,
       "chroma_fringe_pixels": 0
     },
@@ -445,7 +445,7 @@
       "row": 5,
       "column": 6,
       "used": true,
-      "nontransparent_pixels": 13456,
+      "nontransparent_pixels": 21574,
       "opaque_chroma_key_pixels": 0,
       "chroma_fringe_pixels": 0
     },
@@ -454,7 +454,7 @@
       "row": 5,
       "column": 7,
       "used": true,
-      "nontransparent_pixels": 13261,
+      "nontransparent_pixels": 21559,
       "opaque_chroma_key_pixels": 0,
       "chroma_fringe_pixels": 0
     },

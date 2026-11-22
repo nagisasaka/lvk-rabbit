@@ -1,0 +1,38 @@
+LVK Rabbit v2.4.0 — 背丈を保った新しいFailedと、手振りのミント色補正。 / A clearer Failed pose and a mint-matched hoodie.
+
+![LVK Rabbit Failed](https://raw.githubusercontent.com/nagisasaka/lvk-rabbit/v2.4.0/previews/failed.webp)
+
+## 日本語
+
+- Failedを刷新。体を起こして座り、丸い手でうつむいた頭を抱えます。額側に下げたアホ毛と、茶色の輪郭・二段階の陰影を持つ青い汗が、困っている状態を伝えます。
+- 従来の平たい姿勢からIdleに近い背丈へ変更し、足元の位置も揃えました。ループ中にWaitingへ戻る姿勢は入りません。
+- 手振りのパーカーをIdleの明るいミントグリーンへ補正。形・動き・毛色・透過は維持しています。
+- v2.3.0からの変更はFailedの8コマとWavingの4コマのみ。他7状態・正面セル・16方向は画素単位で同一です。
+- 形式検証と、ライト／ダーク背景・96／192pxの視覚QAに合格しています。
+
+**導入:** `lvk-rabbit-v2.4.0.zip` を展開し、既存版をバックアップしてから `lvk-rabbit` フォルダーを `~/.codex/pets/` に配置してください。Pet IDは従来の `lvk-rabbit` です。
+
+## English
+
+- Failed now holds a bowed head with rounded paws while sitting upright. A lowered tuft and a brown-outlined blue sweat drop with clear two-tone shading communicate a troubled state.
+- The seated silhouette keeps a height and baseline close to Idle. The restrained loop never returns to a waiting pose.
+- Waving's hoodie now matches Idle's bright mint green, preserving its approved geometry, timing, cream fur, and alpha.
+- Only eight Failed frames and four Waving frames changed from v2.3.0. Seven other states, the neutral cell, and sixteen look directions are pixel-identical.
+- Format validation and visual QA at 96/192px on light/dark backgrounds passed.
+
+**Install:** Extract `lvk-rabbit-v2.4.0.zip`, back up your current pet, then place its `lvk-rabbit` folder in `~/.codex/pets/`. The public pet ID remains unchanged.
+
+## Compatibility & validation / 互換性・検証
+
+Release version: v2.4.0. Sprite format: `spriteVersionNumber: 2`, 1536×2288 lossless transparent WebP. For v1-only clients, use [v1.1.0](https://github.com/nagisasaka/lvk-rabbit/releases/tag/v1.1.0).
+
+[Documentation / ドキュメント](https://github.com/nagisasaka/lvk-rabbit/tree/v2.4.0) · [Format validation / 形式検証](https://github.com/nagisasaka/lvk-rabbit/blob/v2.4.0/qa/validation.json) · [Visual QA / 視覚QA](https://github.com/nagisasaka/lvk-rabbit/blob/v2.4.0/qa/release.json)
+
+[Failed before/after / 新旧比較](https://github.com/nagisasaka/lvk-rabbit/blob/v2.4.0/previews/failed-before-after-light.gif) · [Hoodie-color comparison / パーカー色比較](https://github.com/nagisasaka/lvk-rabbit/blob/v2.4.0/previews/idle-wave-idle-light.gif)
+
+Client event-to-animation mapping was not changed. Visual QA used chronological frame inspection; live client playback was not tested during this production run.
+クライアント側のイベント割り当ては変更していません。視覚QAは時系列フレームを確認したもので、制作時の実アプリ内再生は未検証です。
+
+Published through GitHub Actions. `SHA256SUMS.txt` verifies the Pet ZIP download.
+
+CC BY 4.0 — LVK Rabbit by Masato Fujino. See the included LICENSE.

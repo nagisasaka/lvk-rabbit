@@ -4,7 +4,7 @@ A friendly animated rabbit for Codex and Petdex, with soft dimensional shading.
 
 LVK Rabbit is a cream-colored, lop-eared coding companion with round glasses, a mint-green hoodie, and a laptop marked with a four-leaf clover. It was designed with ChatGPT and animated with Codex using the community Hatch Pet / hatch-pet-v2 workflow.
 
-**Current release: v2.3.0** — 9 animation states and 16 look directions in the v2 atlas format.
+**Current release: v2.4.0** — 9 animation states and 16 look directions in the v2 atlas format.
 
 [日本語](README.ja.md)
 
@@ -32,11 +32,15 @@ The v2.2 gaze and jump improvements are preserved: the artwork keeps substantial
 
 After downloading or cloning, open [the interactive preview](previews/index.html) locally to try pointer-directed gaze and light/dark backgrounds.
 
-## New in v2.3.0
+## New in v2.4.0
 
-The rabbit now raises a compact, rounded arm beside its face and waves twice to catch your attention. Its cream fur matches Idle, avoiding a color jump when switching states. Only the four `waving` frames changed; the other eight states, neutral cell, and sixteen look directions are unchanged from v2.2.0.
+Failed now keeps a seated body close to Idle's height, with rounded paws holding a bowed head, a lowered hair tuft, and a prominent blue sweat drop. The sweat uses the rabbit's brown outline and clear two-tone shading. The restrained loop stays visibly troubled throughout, with no return to a waiting pose.
 
-[Idle → wave → Idle comparison](previews/idle-wave-idle-light.gif) · [Small dark-background comparison](previews/idle-wave-idle-dark-small.gif). These compare the final prototype before and after fur-color correction. Client event-to-animation mapping was not changed.
+Waving now matches Idle's mint-green hoodie color as well as its cream fur. Its approved shape, timing, and transparency are preserved. Compared with v2.3.0, only eight `failed` frames and four `waving` frames changed; the other seven states, neutral cell, and all sixteen look directions are pixel-identical.
+
+[Failed before/after](previews/failed-before-after-light.gif) · [Small dark-background Failed comparison](previews/failed-before-after-dark-small.gif) · [Idle → Failed → Idle](previews/idle-failed-idle-light.gif) · [Waving hoodie-color comparison](previews/idle-wave-idle-light.gif).
+
+These compare the published v2.3.0 artwork with v2.4.0. Client event-to-animation mapping was not changed.
 
 ## Install in Codex
 
@@ -52,7 +56,7 @@ For a client that only supports the v1 atlas, use the existing [v1.1.0 tag](http
 
 ## Atlas and validation
 
-- Release version: **v2.3.0**; sprite format: **2** (these are separate version numbers).
+- Release version: **v2.4.0**; sprite format: **2** (these are separate version numbers).
 - Lossless transparent WebP: **1536 × 2288**, 8 columns × 11 rows, 192 × 208 per cell.
 - 57 standard animation frames, 16 clockwise gaze poses, and 1 neutral cell; the remaining 14 cells are transparent.
 - Standard rows: idle, running-right, running-left, waving, jumping, failed, waiting, running (working), review.
@@ -60,7 +64,7 @@ For a client that only supports the v1 atlas, use the existing [v1.1.0 tag](http
 
 See the [contact sheet](qa/contact-sheet.png), [direction sheet](qa/look-directions.png), [eye comparison](qa/eyes-before-after.png), [format validation](qa/validation.json), and [visual QA summary](qa/release.json). Visual QA covered both backgrounds and small-size previews; live-app behavior was not tested during this production run.
 
-The published spritesheet is byte-for-byte identical to the approved color-matched attention-wave artwork. Previews can be regenerated from it with `python scripts/render_previews.py` in an environment with Pillow installed.
+The published spritesheet is byte-for-byte identical to the approved outlined-sweat Failed artwork, including the approved mint-matched attention wave. Previews can be regenerated from it with `python scripts/render_previews.py` in an environment with Pillow installed.
 
 ## Release automation
 
