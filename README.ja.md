@@ -4,7 +4,7 @@ LVK Rabbitは、柔らかい立体感を持つ、Codex・Petdex向けのオリ�
 
 クリーム色の垂れ耳、丸眼鏡、ミントグリーンのパーカー、四つ葉クローバー付きノートPCが特徴の、ちょっと早とちりで一生懸命なコーディングウサギです。ChatGPTでデザインを決め、CodexとコミュニティのHatch Pet / hatch-pet-v2ワークフローで制作しました。
 
-**現在のリリース：v2.4.1** — 標準9状態と16方向の視線を、v2形式のアトラスに収録しています。
+**現在のリリース：v2.4.1** — v2形式（9状態＋16方向の視線）と、同じデザインのv1互換形式（9状態・視線追従なし）を配布しています。
 
 [English](README.md)
 
@@ -56,9 +56,17 @@ v2.4.0からの変更は `failed` の8コマと `waving` の4コマのみ。他7
 ~/.codex/pets/lvk-rabbit/
 ```
 
-公開用のPet IDは従来の `lvk-rabbit` を維持しています。`spriteVersionNumber: 2` に対応するクライアントを使用してください。カスタムPetの利用可否や選択操作はクライアントによって異なります。必要に応じてアプリを再起動し、LVK Rabbitを選択してください。
+クライアントに合う形式を選んでください。どちらもPet IDは `lvk-rabbit` なので、この配置先には片方をインストールします。必要に応じてアプリを再起動し、LVK Rabbitを選択してください。
 
-v1形式のみ対応するクライアント向けには、既存の[v1.1.0タグ](https://github.com/nagisasaka/lvk-rabbit/tree/v1.1.0)を残しています。
+| v2.4.1 Releaseの添付ファイル | 用途 |
+|---|---|
+| `lvk-rabbit-v2.4.1.zip` | v2形式：9状態＋視線追従 |
+| `lvk-rabbit-v2.4.1-format-v1.zip` | v1形式：同じデザインの9状態、視線追従なし |
+| `lvk-rabbit-v2.4.1-format-v1-petdex.zip` | Petdex提出用：v1形式、ファイル直下型ZIP |
+
+既存のPetdex掲載を編集更新するときは、v1 ZIP内の `pet.json` と `spritesheet.webp` を使用してください。[compatibility/v1](compatibility/v1)にも同じファイルがあります。IDは従来の `lvk-rabbit` を維持しています。
+
+v1互換版は **1536×1872px・8列×9行**、使用57セル・透明15セルです。9状態の全57フレームはv2.4.1とRGBA画素単位で一致し、追加の正面セルと視線用2行のみを除いています。[v1コンタクトシート](compatibility/v1/contact-sheet.png)・[形式検証](compatibility/v1/validation.json)・[QA](compatibility/v1/qa.json)。上記の9状態プレビューは両形式共通で、視線プレビューはv2専用です。
 
 ## 形式・検証
 
@@ -79,6 +87,8 @@ GitHub Actionsが `main` へのpush、Pull Request、バージョンタグのpus
 次回は `VERSION`、採用画像と `qa/release.json` 内のSHA256を更新し、`releases/vX.Y.Z.txt` を追加します。プレビューを再生成してcommitし、対応する注釈付きタグをpushしてください。Actionsがドラフトを作成し、Pet ZIPと `SHA256SUMS.txt` を添付して公開します。公開済みの添付ファイルは上書きしません。途中で止まった場合はActionsの失敗したジョブを再実行できます。
 
 ローカルでの梱包は `scripts/requirements-release.txt` を導入後、`python scripts/build_release.py` を実行します。出力先は `dist/` です。
+
+互換版用の `vX.Y.Z-v1` タグは、既存の `vX.Y.Z` Releaseへv1用ZIP 2点と `SHA256SUMS-v1.txt` を追加します。公開済みv2 ZIPとの一致を検証してから追加し、既存の添付ファイルは上書きしません。作品のバージョン番号はそのままです。ローカルでは `python scripts/build_v1_release.py` で梱包できます。変換結果のQAは `compatibility/v1/qa.json` に記録します。今回の互換版ソースは `v2.4.1-v1` タグに保存し、元の `v2.4.1` タグは変更しません。
 
 ## ライセンス
 

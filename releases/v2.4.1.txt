@@ -26,7 +26,19 @@ LVK Rabbit v2.4.1 — コミカルなFailedと、手振りの腕・輪郭の微�
 
 ## Compatibility & validation / 互換性・検証
 
-Sprite format: `spriteVersionNumber: 2`, 1536×2288 lossless transparent WebP. For v1-only clients, use [v1.1.0](https://github.com/nagisasaka/lvk-rabbit/releases/tag/v1.1.0).
+同じv2.4.1デザインのv1互換版を追加しました。 / A v1-compatible edition of the same v2.4.1 artwork is now available.
+
+| Asset / 添付ファイル | Format / 用途 |
+|---|---|
+| `lvk-rabbit-v2.4.1.zip` | Original v2: 1536×2288, 9 states + 16 gaze directions / 従来のv2形式・視線追従あり |
+| `lvk-rabbit-v2.4.1-format-v1.zip` | v1: 1536×1872, same 9 states, no gaze / v1互換版・視線追従なし |
+| `lvk-rabbit-v2.4.1-format-v1-petdex.zip` | v1 flat ZIP for Petdex / Petdex用・ファイル直下型 |
+
+The v1 edition retains all 57 animation frames pixel-for-pixel, including alpha. The extra neutral cell and gaze rows are removed; `spriteVersionNumber` is 1. Pet ID remains `lvk-rabbit`. Existing v2 files and the v2.4.1 tag are unchanged. Verify v1 downloads with `SHA256SUMS-v1.txt`.
+
+v1版の9状態・57フレームは透過情報も含めv2.4.1と完全一致です。v2専用の正面セルと視線行を除き、`spriteVersionNumber` を1にしました。IDは `lvk-rabbit` のままです。既存v2添付ファイルとv2.4.1タグは維持しています。v1用の検算ファイルは `SHA256SUMS-v1.txt` です。Petdexの既存掲載を編集するときはv1 ZIPから取り出した `pet.json` と `spritesheet.webp` を使用してください。
+
+[v1 source / ソース・QA](https://github.com/nagisasaka/lvk-rabbit/tree/v2.4.1-v1/compatibility/v1) · [Updated instructions / 更新後の説明](https://github.com/nagisasaka/lvk-rabbit/blob/v2.4.1-v1/README.ja.md)
 
 [Documentation / ドキュメント](https://github.com/nagisasaka/lvk-rabbit/tree/v2.4.1) · [Format validation / 形式検証](https://github.com/nagisasaka/lvk-rabbit/blob/v2.4.1/qa/validation.json) · [Visual QA / 視覚QA](https://github.com/nagisasaka/lvk-rabbit/blob/v2.4.1/qa/release.json)
 

@@ -4,7 +4,7 @@ A friendly animated rabbit for Codex and Petdex, with soft dimensional shading.
 
 LVK Rabbit is a cream-colored, lop-eared coding companion with round glasses, a mint-green hoodie, and a laptop marked with a four-leaf clover. It was designed with ChatGPT and animated with Codex using the community Hatch Pet / hatch-pet-v2 workflow.
 
-**Current release: v2.4.1** — 9 animation states and 16 look directions in the v2 atlas format.
+**Current release: v2.4.1** — available in v2 format (9 states + 16 look directions) and v1 format (the same 9 states, without gaze).
 
 [日本語](README.ja.md)
 
@@ -56,9 +56,17 @@ Download the Pet ZIP from the [latest Release](https://github.com/nagisasaka/lvk
 ~/.codex/pets/lvk-rabbit/
 ```
 
-Keep the public package ID `lvk-rabbit`. Use a client that supports `spriteVersionNumber: 2`; custom-pet controls and availability depend on the client. Restart the app if needed and select LVK Rabbit.
+Choose the package matching your client. Both use the ID `lvk-rabbit`; install one format at this location. Restart if needed and select LVK Rabbit.
 
-For a client that only supports the v1 atlas, use the existing [v1.1.0 tag](https://github.com/nagisasaka/lvk-rabbit/tree/v1.1.0).
+| Package in the v2.4.1 Release | Purpose |
+|---|---|
+| `lvk-rabbit-v2.4.1.zip` | Format 2; nine states and pointer-following gaze |
+| `lvk-rabbit-v2.4.1-format-v1.zip` | Format 1; same artwork and nine states, no gaze |
+| `lvk-rabbit-v2.4.1-format-v1-petdex.zip` | Format 1; flat ZIP for Petdex submission |
+
+For editing the existing Petdex entry, use `pet.json` and `spritesheet.webp` extracted from the v1 ZIP. These files are also available in [compatibility/v1](compatibility/v1). The ID remains `lvk-rabbit`.
+
+The v1 conversion has a **1536 × 1872**, 8 × 9 atlas: 57 used cells and 15 transparent cells. All 57 animation cells are RGBA-identical to v2.4.1. Only the extra neutral cell and gaze rows are removed. See the [v1 contact sheet](compatibility/v1/contact-sheet.png), [validation](compatibility/v1/validation.json), and [QA](compatibility/v1/qa.json). The nine animation previews above apply to both formats; gaze previews apply only to v2.
 
 ## Atlas and validation
 
@@ -79,6 +87,8 @@ GitHub Actions validates the pet and builds a reproducible ZIP on pushes to `mai
 For the next release, update `VERSION`, the approved artwork and QA hash in `qa/release.json`, and add `releases/vX.Y.Z.txt`; regenerate previews, commit, then push the matching annotated tag. The workflow creates a draft, uploads the Pet ZIP and `SHA256SUMS.txt`, and publishes it. Existing published assets are never overwritten. To retry an interrupted draft publication, rerun the failed Actions job.
 
 Local packaging: install `scripts/requirements-release.txt`, then run `python scripts/build_release.py`. Output is written to `dist/`.
+
+A compatibility tag `vX.Y.Z-v1` attaches the two v1 ZIPs and `SHA256SUMS-v1.txt` to the existing `vX.Y.Z` Release. It verifies the published v2 ZIP before uploading and never replaces existing assets. The artwork version stays the same. Build locally with `python scripts/build_v1_release.py`; approve the conversion in `compatibility/v1/qa.json` first. The `v2.4.1-v1` tag records the compatibility source; the original `v2.4.1` tag is unchanged.
 
 ## License
 

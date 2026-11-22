@@ -3,6 +3,9 @@ set -euo pipefail
 : "${GH_TOKEN:?GitHub Actions token is required}"
 : "${GH_REPO:?Repository is required}"
 : "${RELEASE_TAG:?Release tag is required}"
+if [[ "$RELEASE_TAG" == *-v1 ]]; then
+  exec bash scripts/publish_v1_assets.sh
+fi
 [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
 [[ "$RELEASE_TAG" == "v$(cat VERSION)" ]]
 archive="dist/lvk-rabbit-${RELEASE_TAG}.zip"

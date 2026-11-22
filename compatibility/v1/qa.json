@@ -1,0 +1,21 @@
+{
+  "artwork_release": "v2.4.1",
+  "spriteVersionNumber": 1,
+  "source_v2_sha256": "e2eb66d241d968c3d301307415f72b2448cdae2b676107c3753fc82646f98da2",
+  "spritesheet_sha256": "ccb880eb3c2738d23e3a7dc2efb2e71a6c25d57a0bf8a9ab6967f48034953529",
+  "used_cells": 57,
+  "transparent_unused_cells": 15,
+  "all_57_animation_cells_rgba_identical": true,
+  "neutral_cell_cleared": [
+    0,
+    6
+  ],
+  "look_rows_removed": [
+    9,
+    10
+  ],
+  "visual_qa": "pass",
+  "new_image_generation": false,
+  "visual_qa_note": "Independent contact-sheet review passed. All 57 standard cells preserve the exact v2.4.1 RGBA pixels; no clipping or transparent RGB residue.",
+  "limitations": "Conversion-only QA; motion is preserved by pixel equality. Live client playback not tested."
+}

@@ -101,7 +101,12 @@ def main():
     parser.add_argument("--tag")
     parser.add_argument("--output-dir", type=Path, default=ROOT / "dist")
     args = parser.parse_args()
-    print(json.dumps(build_release(ROOT, args.output_dir, args.tag), indent=2))
+    if args.tag and args.tag.endswith("-v1"):
+        from build_v1_release import build_v1_release
+        report = build_v1_release(ROOT, args.output_dir, args.tag)
+    else:
+        report = build_release(ROOT, args.output_dir, args.tag)
+    print(json.dumps(report, indent=2))
 
 
 if __name__ == "__main__":
