@@ -1,9 +1,9 @@
 {
-  "release": "v2.2.0",
+  "release": "v2.3.0",
   "spriteVersionNumber": 2,
-  "spritesheet_sha256": "d959dd073c169f3fdc658ac4c57dacfb454971bc154427d91c8520a98377036f",
+  "spritesheet_sha256": "e0052baaf4ca04071b40f4bcaf0bb8439e72b999068cc5f8bf884b088be12fa5",
   "visual_qa": "pass",
-  "qa_note": "Same rabbit identity, cream/pink/mint/gray palette, clean eye-rim separation and substantial oval pupils; joyful jump and all nine animation meanings read correctly; sixteen clockwise gaze poses have no wrong quadrant or reversal.",
+  "qa_note": "Approved upright, compact double wave with cream fur matched to Idle. Eight other animation rows, neutral cell, and all sixteen look directions remain pixel-identical to v2.2.0.",
   "direction_semantics": [
     {
       "direction": "000",
@@ -172,13 +172,213 @@
     192
   ],
   "live_app_tested": false,
-  "approval": "User accepted v2.2 as finished on 2026-11-07",
+  "approval": "User accepted the final color-matched attention wave on 2026-11-22",
   "comparison": "eyes-before-after.png compares the v2.1 production candidate with v2.2; v2.1 was not previously published in this repository.",
   "publication_checks": {
     "approved_atlas_bytes_unchanged": true,
+    "unchanged_cells_vs_v2_2_0": 84,
+    "changed_cells": [
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
     "preview_files": 10,
     "preview_frames": 73,
     "preview_visible_pixels_alpha_and_durations_match_atlas": true,
     "license_unchanged": true
+  },
+  "inherited_qa": "Direction semantics, blind direction review, eye comparison and jump review are inherited from v2.2.0; those cells are unchanged.",
+  "wave_qa": {
+    "verdict": "pass",
+    "scope": "Color v6: match cream fur to Idle while preserving approved upright v5 pose geometry.",
+    "spritesheet_sha256": "e0052baaf4ca04071b40f4bcaf0bb8439e72b999068cc5f8bf884b088be12fa5",
+    "method": "Independent inspection of complete color contact sheet,96px/192px light/dark skin comparisons, and all20 chronological frames from each of four Idle-wave-Idle GIFs. Read color-match and formal validation reports.",
+    "live_playback_tested": false,
+    "live_client_state_mapping_tested": false,
+    "checks": {
+      "fur_palette_match": "pass: prior peach/darker cast in waving face, raised paw and feet is removed. New cream coloration visibly aligns with Idle on both backgrounds at96px and192px, without turning the rabbit stark white.",
+      "transition_color_consistency": "pass at frame-sequence level: corrected wave frames no longer show the conspicuous darker/pinker face-and-foot change seen in the before sequence. Each GIF has20frames totaling3600ms, including direct Idle-wave and wave-Idle boundaries.",
+      "shading_preservation": "pass visually: soft warm shading around muzzle, face perimeter, paw and feet remains visible; highlights and shadows retain dimension rather than becoming a flat opaque fill.",
+      "mask_boundaries": "pass visually: no obvious hard rectangular/scanline masks, abrupt color seams at cheek blush/ear pink/feet, or pale outline halo in reviewed192px and96px images.",
+      "eyes_and_cuteness": "pass: substantial oval dark pupils, clear round glasses, open friendly smile and cheek blush retain the approved expression.",
+      "geometry_and_transparency": "pass from report plus visual comparisons: whole atlas alpha is bit-identical to v5, dark linework and green hoodie pixels unchanged, and only fur RGB altered; approved compact upright arm/paw path and body shape visually unchanged. No new alpha issue visible.",
+      "format_and_scope": "pass: saved row and atlas checks each ok=true with no errors/warnings;84othercells unchanged."
+    },
+    "notes": [
+      "Color equality is calibrated at representative face/foot samples; this does not mean every shaded fur pixel is identical to an Idle pixel. Remaining local shading is intentional and looks coherent.",
+      "Previously approved pose/expression changes at Idle-wave transitions remain; this review judges their color consistency, not a new motion interpolation.",
+      "No real-time Codex playback or actual approval-state dispatch was tested; assessment uses decoded chronological GIF frames."
+    ],
+    "warnings": [],
+    "failures": []
+  },
+  "color_match": {
+    "source_face": [
+      246.0,
+      216.0,
+      200.0
+    ],
+    "source_feet": [
+      245.0,
+      215.0,
+      199.0
+    ],
+    "donor_face": [
+      249.0,
+      232.0,
+      214.5
+    ],
+    "donor_feet": [
+      251.0,
+      236.5,
+      219.5
+    ],
+    "target_face": [
+      253.0,
+      237.0,
+      220.0
+    ],
+    "target_feet": [
+      253.0,
+      235.0,
+      215.0
+    ],
+    "face_rgb_offset": [
+      7.0,
+      21.0,
+      20.0
+    ],
+    "feet_rgb_offset": [
+      8.0,
+      20.0,
+      16.0
+    ],
+    "whole_atlas_alpha_identical": true,
+    "unchanged_cells": 84,
+    "unmodified_outside_fur_mask": true,
+    "frames": [
+      {
+        "frame": 0,
+        "changed_pixels": 7620,
+        "alpha_identical": true,
+        "dark_ink_changed": 0,
+        "green_pixels_changed": 0,
+        "forehead_before": [
+          246.0,
+          216.0,
+          200.0
+        ],
+        "forehead_after": [
+          253.0,
+          237.0,
+          220.0
+        ],
+        "foot_before": [
+          245.0,
+          215.0,
+          199.0
+        ],
+        "foot_after": [
+          253.0,
+          235.0,
+          215.0
+        ]
+      },
+      {
+        "frame": 1,
+        "changed_pixels": 7520,
+        "alpha_identical": true,
+        "dark_ink_changed": 0,
+        "green_pixels_changed": 0,
+        "forehead_before": [
+          246,
+          216,
+          199
+        ],
+        "forehead_after": [
+          253,
+          237,
+          219
+        ],
+        "foot_before": [
+          245.0,
+          215.0,
+          199.0
+        ],
+        "foot_after": [
+          253.0,
+          235.0,
+          215.0
+        ]
+      },
+      {
+        "frame": 2,
+        "changed_pixels": 7638,
+        "alpha_identical": true,
+        "dark_ink_changed": 0,
+        "green_pixels_changed": 0,
+        "forehead_before": [
+          246.0,
+          216.0,
+          200.0
+        ],
+        "forehead_after": [
+          253.0,
+          237.0,
+          220.0
+        ],
+        "foot_before": [
+          246.0,
+          215.5,
+          199.0
+        ],
+        "foot_after": [
+          254.0,
+          235.5,
+          215.0
+        ]
+      },
+      {
+        "frame": 3,
+        "changed_pixels": 7496,
+        "alpha_identical": true,
+        "dark_ink_changed": 0,
+        "green_pixels_changed": 0,
+        "forehead_before": [
+          246.0,
+          216.0,
+          200.0
+        ],
+        "forehead_after": [
+          253.0,
+          237.0,
+          220.0
+        ],
+        "foot_before": [
+          245.0,
+          215.0,
+          199.0
+        ],
+        "foot_after": [
+          253.0,
+          235.0,
+          215.0
+        ]
+      }
+    ],
+    "geometry_reference": "Approved upright wave prototype; the final correction changed only fur RGB, preserving all alpha and dark linework."
   }
 }

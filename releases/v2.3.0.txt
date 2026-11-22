@@ -1,0 +1,37 @@
+LVK Rabbit v2.3.0 — 「ねぇねぇ」と呼びかける、新しい手振り。 / A clearer, friendlier attention wave.
+
+![LVK Rabbit waving](https://raw.githubusercontent.com/nagisasaka/lvk-rabbit/v2.3.0/previews/waving.webp)
+
+## 日本語
+
+- 顔の横に手を上げて二度振る、気づきやすい呼びかけポーズに更新しました。
+- 腕はコンパクトな長さとほどよい太さ。肘の曲がりを抑え、可愛さを保っています。
+- 顔・手・足のクリーム色をIdleに合わせ、切り替え時に色が濃くなる問題を修正しました。採用した形と動き、透過は保持しています。
+- 変更は `waving` の4コマのみ。他8状態・正面セル・16方向の視線はv2.2.0と同一です。
+- 形式検証と、ライト／ダーク背景・96／192pxでの視覚QAに合格しています。
+
+**導入:** 下の `lvk-rabbit-v2.3.0.zip` を展開し、既存版をバックアップしてから、`lvk-rabbit` フォルダーを `~/.codex/pets/` に配置してください。公開用Pet IDは従来どおりです。
+
+## English
+
+- A raised, near-face double wave makes the rabbit's call for attention easier to notice.
+- Compact arm proportions and a softly rounded sleeve retain its friendly character.
+- Cream fur on the face, paws and feet now matches Idle. The approved wave geometry, animation and alpha are preserved through the color correction.
+- Only four `waving` frames changed. Eight other animation states, the neutral cell and all sixteen look directions are pixel-identical to v2.2.0.
+- Format validation and visual QA at 96/192 px on light/dark backgrounds passed.
+
+**Install:** Extract `lvk-rabbit-v2.3.0.zip`, back up your existing pet, then place its `lvk-rabbit` folder in `~/.codex/pets/`. The public pet ID remains unchanged.
+
+## Compatibility & validation / 互換性・検証
+
+Requires a client supporting `spriteVersionNumber: 2`. The release version is v2.3.0; the sprite format remains 2. For v1-only clients, use [v1.1.0](https://github.com/nagisasaka/lvk-rabbit/releases/tag/v1.1.0).
+
+[Documentation / ドキュメント](https://github.com/nagisasaka/lvk-rabbit/tree/v2.3.0) · [Format validation / 形式検証](https://github.com/nagisasaka/lvk-rabbit/blob/v2.3.0/qa/validation.json) · [Visual QA / 視覚QA](https://github.com/nagisasaka/lvk-rabbit/blob/v2.3.0/qa/release.json)
+
+[Idle → wave → Idle color comparison / 色補正前後の比較](https://github.com/nagisasaka/lvk-rabbit/blob/v2.3.0/previews/idle-wave-idle-light.gif)
+
+Client event-to-animation mapping was not changed. Live Codex playback was not tested during this production run. / クライアント側のイベント割り当ては変更していません。制作時の実Codexアプリ内再生は未検証です。
+
+This release is packaged and published through GitHub Actions. `SHA256SUMS.txt` verifies the Pet ZIP download.
+
+CC BY 4.0 — LVK Rabbit by Masato Fujino. See the included LICENSE.

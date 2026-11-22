@@ -4,7 +4,7 @@ A friendly animated rabbit for Codex and Petdex, with soft dimensional shading.
 
 LVK Rabbit is a cream-colored, lop-eared coding companion with round glasses, a mint-green hoodie, and a laptop marked with a four-leaf clover. It was designed with ChatGPT and animated with Codex using the community Hatch Pet / hatch-pet-v2 workflow.
 
-**Current release: v2.2.0** — 9 animation states and 16 look directions in the v2 atlas format.
+**Current release: v2.3.0** — 9 animation states and 16 look directions in the v2 atlas format.
 
 [日本語](README.ja.md)
 
@@ -28,13 +28,19 @@ LVK Rabbit is a cream-colored, lop-eared coding companion with round glasses, a 
 
 ![Clockwise gaze loop](previews/look.webp)
 
-The v2.2 artwork keeps substantial oval pupils when looking sideways, uses gentler head turns, and restores a joyful jump with raised hands and ears while keeping the resting endpoints at the correct size.
+The v2.2 gaze and jump improvements are preserved: the artwork keeps substantial oval pupils when looking sideways, uses gentler head turns, and restores a joyful jump with raised hands and ears while keeping the resting endpoints at the correct size.
 
 After downloading or cloning, open [the interactive preview](previews/index.html) locally to try pointer-directed gaze and light/dark backgrounds.
 
+## New in v2.3.0
+
+The rabbit now raises a compact, rounded arm beside its face and waves twice to catch your attention. Its cream fur matches Idle, avoiding a color jump when switching states. Only the four `waving` frames changed; the other eight states, neutral cell, and sixteen look directions are unchanged from v2.2.0.
+
+[Idle → wave → Idle comparison](previews/idle-wave-idle-light.gif) · [Small dark-background comparison](previews/idle-wave-idle-dark-small.gif). These compare the final prototype before and after fur-color correction. Client event-to-animation mapping was not changed.
+
 ## Install in Codex
 
-Copy `pet.json` and `spritesheet.webp` together into:
+Download the Pet ZIP from the [latest Release](https://github.com/nagisasaka/lvk-rabbit/releases/latest), back up your existing pet, and extract its `lvk-rabbit` folder. Keep `pet.json` and `spritesheet.webp` together in:
 
 ```text
 ~/.codex/pets/lvk-rabbit/
@@ -46,7 +52,7 @@ For a client that only supports the v1 atlas, use the existing [v1.1.0 tag](http
 
 ## Atlas and validation
 
-- Release version: **v2.2.0**; sprite format: **2** (these are separate version numbers).
+- Release version: **v2.3.0**; sprite format: **2** (these are separate version numbers).
 - Lossless transparent WebP: **1536 × 2288**, 8 columns × 11 rows, 192 × 208 per cell.
 - 57 standard animation frames, 16 clockwise gaze poses, and 1 neutral cell; the remaining 14 cells are transparent.
 - Standard rows: idle, running-right, running-left, waving, jumping, failed, waiting, running (working), review.
@@ -54,7 +60,15 @@ For a client that only supports the v1 atlas, use the existing [v1.1.0 tag](http
 
 See the [contact sheet](qa/contact-sheet.png), [direction sheet](qa/look-directions.png), [eye comparison](qa/eyes-before-after.png), [format validation](qa/validation.json), and [visual QA summary](qa/release.json). Visual QA covered both backgrounds and small-size previews; live-app behavior was not tested during this production run.
 
-The published spritesheet is byte-for-byte identical to the approved v2.2 artwork. Previews can be regenerated from it with `python scripts/render_previews.py` in an environment with Pillow installed.
+The published spritesheet is byte-for-byte identical to the approved color-matched attention-wave artwork. Previews can be regenerated from it with `python scripts/render_previews.py` in an environment with Pillow installed.
+
+## Release automation
+
+GitHub Actions validates the pet and builds a reproducible ZIP on pushes to `main`, pull requests, and version-tag pushes. A pushed `vX.Y.Z` tag publishes a Release only after validation succeeds, using that repository’s temporary `GITHUB_TOKEN` with `contents: write`. No personal token is required.
+
+For the next release, update `VERSION`, the approved artwork and QA hash in `qa/release.json`, and add `releases/vX.Y.Z.txt`; regenerate previews, commit, then push the matching annotated tag. The workflow creates a draft, uploads the Pet ZIP and `SHA256SUMS.txt`, and publishes it. Existing published assets are never overwritten. To retry an interrupted draft publication, rerun the failed Actions job.
+
+Local packaging: install `scripts/requirements-release.txt`, then run `python scripts/build_release.py`. Output is written to `dist/`.
 
 ## License
 

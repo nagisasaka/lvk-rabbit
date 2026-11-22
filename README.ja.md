@@ -4,7 +4,7 @@ LVK Rabbitは、柔らかい立体感を持つ、Codex・Petdex向けのオリ�
 
 クリーム色の垂れ耳、丸眼鏡、ミントグリーンのパーカー、四つ葉クローバー付きノートPCが特徴の、ちょっと早とちりで一生懸命なコーディングウサギです。ChatGPTでデザインを決め、CodexとコミュニティのHatch Pet / hatch-pet-v2ワークフローで制作しました。
 
-**現在のリリース：v2.2.0** — 標準9状態と16方向の視線を、v2形式のアトラスに収録しています。
+**現在のリリース：v2.3.0** — 標準9状態と16方向の視線を、v2形式のアトラスに収録しています。
 
 [English](README.md)
 
@@ -32,9 +32,15 @@ v2.2では横向きでも黒目の縦長の形と大きさを保ち、顔の振�
 
 ダウンロードまたはclone後に[操作プレビュー](previews/index.html)をローカルで開くと、ポインターによる視線操作、ライト／ダーク背景、表示サイズを確認できます。
 
+## v2.3.0の変更
+
+顔の横にコンパクトな丸い腕を上げ、「ねぇねぇ」と二度呼びかける手振りになりました。毛のクリーム色もIdleに合わせ、切り替え時の色の濃さの差を解消しています。変更は `waving` の4コマのみ。他8状態・正面セル・16方向の視線はv2.2.0と同じです。
+
+[Idle → 手振り → Idleの比較](previews/idle-wave-idle-light.gif)・[ダーク背景の小サイズ比較](previews/idle-wave-idle-dark-small.gif)では、最終試作の色補正前後を確認できます。クライアント側のイベントと動作の割り当ては変更していません。
+
 ## インストール
 
-`pet.json` と `spritesheet.webp` の2ファイルを、同じフォルダーに配置します。
+[最新Release](https://github.com/nagisasaka/lvk-rabbit/releases/latest)からPet用ZIPをダウンロードし、既存版をバックアップしてから展開してください。ZIP内の `lvk-rabbit` フォルダーを配置し、`pet.json` と `spritesheet.webp` を同じフォルダーに保ちます。
 
 ```text
 ~/.codex/pets/lvk-rabbit/
@@ -46,7 +52,7 @@ v1形式のみ対応するクライアント向けには、既存の[v1.1.0タ�
 
 ## 形式・検証
 
-- 作品のリリース番号は **v2.2.0**、スプライト形式の番号は **2** です。
+- 作品のリリース番号は **v2.3.0**、スプライト形式の番号は **2** です。
 - 透過・可逆圧縮WebP：**1536×2288px**、8列×11行、1セル192×208px。
 - 標準57フレーム＋視線16コマ＋正面1コマを収録し、残る14セルは透明です。
 - 標準9状態：idle / running-right / running-left / waving / jumping / failed / waiting / running（作業中）/ review。
@@ -54,7 +60,15 @@ v1形式のみ対応するクライアント向けには、既存の[v1.1.0タ�
 
 [コンタクトシート](qa/contact-sheet.png)、[方向一覧](qa/look-directions.png)、[黒目の比較](qa/eyes-before-after.png)、[形式検証結果](qa/validation.json)、[視覚QAの要約](qa/release.json)を同梱しています。ライト／ダーク背景と小サイズで視覚QAを実施済みです。制作時の実アプリ内動作は未検証です。
 
-スプライトシートは採用済みv2.2完成品とバイト単位で同一です。Pillowを導入したPython環境で `python scripts/render_previews.py` を実行すると、完成品からプレビューを再作成できます。
+スプライトシートは採用済みの色補正済み手振り版とバイト単位で同一です。Pillowを導入したPython環境で `python scripts/render_previews.py` を実行すると、完成品からプレビューを再作成できます。
+
+## Releaseの自動公開
+
+GitHub Actionsが `main` へのpush、Pull Request、バージョンタグのpush時にPetを検証してZIPを作ります。`vX.Y.Z` タグをpushした場合のみ、検証後にReleaseを公開します。使用するのはリポジトリ専用の一時的な `GITHUB_TOKEN` と `contents: write` 権限で、個人用トークンは不要です。
+
+次回は `VERSION`、採用画像と `qa/release.json` 内のSHA256を更新し、`releases/vX.Y.Z.txt` を追加します。プレビューを再生成してcommitし、対応する注釈付きタグをpushしてください。Actionsがドラフトを作成し、Pet ZIPと `SHA256SUMS.txt` を添付して公開します。公開済みの添付ファイルは上書きしません。途中で止まった場合はActionsの失敗したジョブを再実行できます。
+
+ローカルでの梱包は `scripts/requirements-release.txt` を導入後、`python scripts/build_release.py` を実行します。出力先は `dist/` です。
 
 ## ライセンス
 
